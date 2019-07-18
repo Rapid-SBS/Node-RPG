@@ -1,0 +1,27 @@
+{
+  "name": "node-rpg",
+  "version": "1.0.0",
+  "description": "Turn-Based RPG built with Node JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rapid-SBS/Node-RPG.git"
+  },
+  "keywords": [
+    "game",
+    "rpg",
+    "node"
+  ],
+  "author": "Rapid-SBS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rapid-SBS/Node-RPG/issues"
+  },
+  "homepage": "https://github.com/Rapid-SBS/Node-RPG#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
