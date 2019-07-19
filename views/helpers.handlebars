@@ -1,0 +1,91 @@
+<div>
+  <h1> {{ title }} </h1>
+  <p> {{ description }} </p>
+</div>
+
+<!-- Reference: https://handlebarsjs.com/builtin_helpers.html -->
+
+<style>
+h4, h5, p {
+	margin-left: 20px;
+}
+</style>
+
+<br>
+
+<h3>IF Helper</h3>
+{{#if ifval}}
+	<h4>If statement value is TRUE</h4>
+	{{else}}
+	<h4>Testval is FALSE</h4>
+{{/if}}
+
+<h3>UNLESS Helper</h3>
+{{#unless unlessval}}
+	<h4>Unless statement value is FALSE</h4>
+	{{else}}
+	<h4>Unless is TRUE</h4>
+{{/unless}}
+
+<h3>EACH Helper for Arrays</h3>
+	<h4>THIS display method - Arrays</h4>
+	{{#each eacharray}}
+		<p>{{this}}</p>
+	{{/each}}
+
+	<h4>DOT display method</h4>
+	{{#each eacharray}}
+		<p>{{.}}</p>
+	{{/each}}
+
+	<h4>Index display method</h4>
+	{{#each eacharray}}
+		<p>{{@index}}: {{this}}</p>
+	{{/each}}
+
+	<h4>Key/Value display method</h4>
+	{{#each eacharray as |value key|}}
+		<p>{{key}}: {{value}}</p>
+	{{/each}}
+
+<br>
+
+<h3>EACH Helper for Objects</h3>
+	<h4>THIS display method</h4>
+	{{#each eachobject}}
+		<p>{{this}}</p>
+	{{/each}}
+
+	<h4>DOT display method</h4>
+	{{#each eachobject}}
+		<p>{{.}}</p>
+	{{/each}}
+
+	<h4>Key/Value display method</h4>
+	{{#each eachobject as |value key|}}
+		<p>{{@key}}: {{value}}</p>
+	{{/each}}
+
+<br>
+
+<!-- LOG Helper to print to console -->
+{{#each arrayofobjects}}
+	{{log this}}
+{{/each}}
+
+<h3>EACH Helper for Arrays of Objects</h3>
+<h4>Nested EACH Helper</h4>
+{{#each arrayofobjects}}
+	<h5>Object {{@index}}:</h5>
+	{{#each this.fruits}}
+		<p>{{this}}</p>
+	{{/each}}
+{{/each}}
+
+<h4>Key/Value Helper</h4>
+{{#each arrayofobjects as |xValue xKey|}}
+	<h5>Object {{xKey}}:</h5>
+	{{#each xValue.fruits as |yValue yKey|}}
+		<p>{{yValue}}</p>
+	{{/each}}
+{{/each}}
