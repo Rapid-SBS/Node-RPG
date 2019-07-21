@@ -8,12 +8,14 @@ const url = require('url');
 const app = express();
 const port = 8000;
 
-app.engine('handlebars', exphbs({ 
+app.use(express.static('public'));
+
+app.engine('.hbs', exphbs({ 
 	defaultLayout: 'main',
-	layoutsDir: path.join(__dirname, 'views/pagelayouts')
+	extname: '.hbs'
 }));
 
-app.set('view engine', 'handlebars');
+app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views'))
 
 // ----- Routing -----
@@ -31,48 +33,7 @@ app.get('/test', (req, res) => {
 		description: 'This is a test-page description'
 	});
 });
-
-app.get('/helpers', (req, res) => {
-	res.render('helpers', { 
-		title: 'Helpers',
-		description: 'A list of Handlebar Helpers for conditional logic.',
-		ifval: true,
-		unlessval: false,
-		eacharray: [
-			"Array Item One",
-			"Array Item Two",
-			"Array Item Three"
-		],
-		eachobject: {
-			keyone: "Value 1",
-			keytwo: "Value 2",
-			keythree: "Value 3"
-		},
-		arrayofobjects: [
-			{
-				fruits: ['Mango', 'Peach', 'Banana']
-			},
-			{
-				fruits: ['Apple', 'Orange', 'Strawberry']
-			}
-		]	
-	});
-});
-
-/* 
-app.get('/', (req, res, next) => {
-	res.send('Hello! The time and date is: ' + new Date());
-});
-
-app.get('/json', (req, res, next) => {
-	const data = {
-		key: 'Value'
-	}
-
-	res.json(data);
-})
-*/
-// -----------------
+// ------------------
 
 app.listen(port, function(err, res) {
 	if (err) {

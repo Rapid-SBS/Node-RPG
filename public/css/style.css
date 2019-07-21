@@ -1,0 +1,107 @@
+
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0;
+}
+
+.jhide {
+	color: rgba(0,0,0,0);
+	font-size: 1px;
+}
+.overlay {
+	background-color: rgba(0,0,0,0.25);
+	z-index: 1000;
+}
+
+.unclickable {
+	pointer-events: none;
+}
+
+.hideme {
+	display: none;
+}
+
+.capital {
+	text-transform: capitalize;
+}
+
+/* --- Override Styles --- */
+p {
+	margin-bottom: 0;
+}
+
+/* --- Dark Pulsing Text --- */
+.pulsing-text-dark{
+  color:#333;
+	-webkit-animation: flash linear 2s infinite;
+	animation: flash linear 2s infinite;
+}
+
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .05; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .05; } 
+	100% { opacity: 1; }
+}
+
+/* --- White Pulsing Text --- */
+.pulsing-text-white{
+  color:#FFF;
+	-webkit-animation: flash linear 2s infinite;
+	animation: flash linear 2s infinite;
+}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .6; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .6; } 
+	100% { opacity: 1; }
+}
+/* ------------------------- */
+
+.hover-blue {
+    border: 5px solid transparent;
+    border-radius: 5px;
+    transition-property: border, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.hover-blue:hover {
+    border: 5px solid rgba(0, 141, 255, 0.3);
+    background-color: rgba(0, 141, 255, 0.3);
+    border-radius: 5px;
+}
+
+.x-scroll-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.x-scroll-item {
+    flex: 0 0 auto;
+    width: 275px;
+}
+
+.light-transparency {
+	background-color: rgba(0,0,0,0.15);
+}
+
+.y-flex-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.inline {
+	display: inline;
+}
