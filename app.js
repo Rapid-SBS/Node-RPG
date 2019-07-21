@@ -1,40 +1,30 @@
+/* --- Includes --- */
 const express = require('express');
 const exphbs = require('express-handlebars');
 const mongo = require('mongodb').MongoClient;
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
-
-const app = express();
 const port = 8000;
 
+/* --- Express Framework --- */
+const app = express();
 app.use(express.static('public'));
 
+/* --- Express-Handlebars --- */
+app.set('view engine', '.hbs');
 app.engine('.hbs', exphbs({ 
 	defaultLayout: 'main',
+	layoutsDir: path.join(__dirname, 'views/layouts'),
+	partialsDir: path.join(__dirname, 'views/partials'),
 	extname: '.hbs'
 }));
 
-app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname, 'views'))
+/* --- Router --- */
+const routerIndex = require('./routes/router');
+app.use('/', routerIndex);
 
-// ----- Routing -----
-app.get('/', (req, res) => {
-	res.render('index', { 
-		title: 'Home',
-		header: 'RPGenius',
-		description: 'An online tool for curating a D&D-Lite experience.'
-	});
-});
-
-app.get('/test', (req, res) => {
-	res.render('test', { 
-		title: 'Test Page',
-		description: 'This is a test-page description'
-	});
-});
-// ------------------
-
+/* --- Start Server --- */
 app.listen(port, function(err, res) {
 	if (err) {
 		console.log('A startup error has occurred!');
