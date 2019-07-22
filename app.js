@@ -1,11 +1,14 @@
 /* --- Includes --- */
 const express = require('express');
 const exphbs = require('express-handlebars');
-const mongo = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
 const port = 8000;
+
+mongoose.connect('mongodb://localhost/rpg');
+let db = mongoose.connection;
 
 /* --- Express Framework --- */
 const app = express();

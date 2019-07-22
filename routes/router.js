@@ -28,7 +28,7 @@ router.get('/info', (req, res) => {
 router.get('*', (req, res) => {
 	res.render('404', { 
 		title: 'Page Not Found',
-		description: 'Error, page not found.'
+		description: 'Page not found.'
 	});
 });
 

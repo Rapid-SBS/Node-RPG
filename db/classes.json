@@ -1,0 +1,7 @@
+{"_id":{"$oid":"5d35030aa46c113e9cb26df9"},"id":"warrior","name":"Warrior","hp":{"$numberInt":"26"},"att":{"$numberInt":"3"},"def":{"$numberInt":"4"},"int":{"$numberInt":"0"},"res":{"$numberInt":"2"}}
+{"_id":{"$oid":"5d35030aa46c113e9cb26dfa"},"id":"monk","name":"Monk","hp":{"$numberInt":"23"},"att":{"$numberInt":"3"},"def":{"$numberInt":"3"},"int":{"$numberInt":"3"},"res":{"$numberInt":"3"}}
+{"_id":{"$oid":"5d35030aa46c113e9cb26dfb"},"id":"cleric","name":"Cleric","hp":{"$numberInt":"24"},"att":{"$numberInt":"2"},"def":{"$numberInt":"2"},"int":{"$numberInt":"3"},"res":{"$numberInt":"4"}}
+{"_id":{"$oid":"5d35030aa46c113e9cb26dfc"},"id":"archer","name":"Archer","hp":{"$numberInt":"25"},"att":{"$numberInt":"5"},"def":{"$numberInt":"1"},"int":{"$numberInt":"2"},"res":{"$numberInt":"2"}}
+{"_id":{"$oid":"5d35030aa46c113e9cb26dfd"},"id":"mage","name":"Mage","hp":{"$numberInt":"26"},"att":{"$numberInt":"0"},"def":{"$numberInt":"0"},"int":{"$numberInt":"6"},"res":{"$numberInt":"3"}}
+{"_id":{"$oid":"5d35030aa46c113e9cb26dfe"},"id":"runemaster","name":"Rune Master","hp":{"$numberInt":"24"},"att":{"$numberInt":"3"},"def":{"$numberInt":"2"},"int":{"$numberInt":"4"},"res":{"$numberInt":"2"}}
+{"_id":{"$oid":"5d35030aa46c113e9cb26dff"},"id":"rogue","name":"Rogue","hp":{"$numberInt":"26"},"att":{"$numberInt":"6"},"def":{"$numberInt":"2"},"int":{"$numberInt":"0"},"res":{"$numberInt":"1"}}
