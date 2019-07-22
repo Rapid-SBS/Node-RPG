@@ -10,10 +10,10 @@ router.get('/', (req, res) => {
 	});
 });
 
-router.get('/test', (req, res) => {
-	res.render('test', { 
-		title: 'Test Page',
-		description: 'This is a test-page description'
+router.get('/weapon-select', (req, res) => {
+	res.render('weapon-select', { 
+		title: 'Weapon Select',
+		header: 'Weapon Select'
 	});
 });
 

@@ -1,0 +1,59 @@
+<div id="monk-bostaff"></div>
+
+  <a role="button" onclick="setWeaponBostaff()" class="btn btn-success rpg-wpn-select-btn" id="rpg-wpn-btn-bostaff" href="name.php" style="display: none;"><span class="pulsing-text-white">Select</span></a>
+
+<div id="monk-brawler"></div>
+
+  <a role="button" onclick="setWeaponFists()" class="btn btn-success rpg-wpn-select-btn" id="rpg-wpn-btn-brawler" href="name.php" style="display: none;"><span class="pulsing-text-white">Select</span></a>
+
+<div id="monk-windfu"></div>
+
+  <a role="button" onclick="setWeaponWindfu()" class="btn btn-success rpg-wpn-select-btn" id="rpg-wpn-btn-windfu" href="name.php" style="display: none;"><span class="pulsing-text-white">Select</span></a>
+
+<script>
+const setWeaponBostaff = () => {
+  player.weapon = new Weapon("Bo Staff", "bostaff");
+  player.basic = "Cross Strike";
+  player.special = "Leg Sweep";
+  localStorage.setItem('objPlayer', JSON.stringify(player));
+}
+
+const setWeaponBrawler = () => {
+  player.weapon = new Weapon("Brawler", "brawler");
+  player.basic = "Uppercut";
+  player.special = "Chi Burst";
+  localStorage.setItem('objPlayer', JSON.stringify(player));
+}
+
+const setWeaponWindfu = () => {
+  player.weapon = new Weapon("Wind Fu", "windfu");
+  player.basic = "Reverse Kick";
+  player.special = "Wind Slicer";
+  localStorage.setItem('objPlayer', JSON.stringify(player));
+}
+
+$(document).ready(function(){
+
+  $("#monk-bostaff").load("weapons/monk-bostaff.hbs");
+  $("#monk-brawler").load("weapons/monk-brawler.hbs");
+  $("#monk-windfu").load("weapons/monk-windfu.hbs");
+
+  // --- Weapon Select Button script ---
+  $("#monk-bostaff").click(function(){
+    $("#rpg-wpn-btn-windfu").slideUp(300);
+    $("#rpg-wpn-btn-brawler").slideUp(300);
+    $("#rpg-wpn-btn-bostaff").slideDown(300);
+  });
+  $("#monk-brawler").click(function(){
+    $("#rpg-wpn-btn-windfu").slideUp(300);
+    $("#rpg-wpn-btn-bostaff").slideUp(300);
+    $("#rpg-wpn-btn-brawler").slideDown(300);
+  });
+  $("#monk-windfu").click(function(){
+    $("#rpg-wpn-btn-bostaff").slideUp(300);
+    $("#rpg-wpn-btn-brawler").slideUp(300);
+    $("#rpg-wpn-btn-windfu").slideDown(300);
+  });
+
+});
+</script>

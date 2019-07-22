@@ -1,0 +1,59 @@
+<div id="runemaster-runestone"></div>
+
+  <a role="button" onclick="setWeaponRunestone()" class="btn btn-success rpg-wpn-select-btn" id="rpg-wpn-btn-runestone" href="name.php" style="display: none;"><span class="pulsing-text-white">Select</span></a>
+
+<div id="runemaster-runeblade"></div>
+
+  <a role="button" onclick="setWeaponRuneblade()" class="btn btn-success rpg-wpn-select-btn" id="rpg-wpn-btn-runeblade" href="name.php" style="display: none;"><span class="pulsing-text-white">Select</span></a>
+
+<div id="runemaster-aether"></div>
+
+  <a role="button" onclick="setWeaponAether()" class="btn btn-success rpg-wpn-select-btn" id="rpg-wpn-btn-aether" href="name.php" style="display: none;"><span class="pulsing-text-white">Select</span></a>
+
+<script>
+const setWeaponRunestone = () => {
+  player.weapon = new Weapon("Runestone", "runestone");
+  player.basic = "Frostbolt";
+  player.special = "Arcane Burst";
+  localStorage.setItem('objPlayer', JSON.stringify(player));
+}
+
+const setWeaponRuneblade = () => {
+  player.weapon = new Weapon("Runeblade", "runeblade");
+  player.basic = "Crescent Strike";
+  player.special = "Flame Sweep";
+  localStorage.setItem('objPlayer', JSON.stringify(player));
+}
+
+const setWeaponAether = () => {
+  player.weapon = new Weapon("Aether Stone", "aether");
+  player.basic = "Light Flux";
+  player.special = "Seeking Shadow";
+  localStorage.setItem('objPlayer', JSON.stringify(player));
+}
+
+$(document).ready(function(){
+
+  $("#runemaster-runestone").load("weapons/runemaster-runestone.hbs");
+  $("#runemaster-runeblade").load("weapons/runemaster-runeblade.hbs");
+  $("#runemaster-aether").load("weapons/runemaster-aether.hbs");
+  
+  // --- Weapon Select Button script ---
+  $("#runemaster-runestone").click(function(){
+    $("#rpg-wpn-btn-aether").slideUp(300);
+    $("#rpg-wpn-btn-runeblade").slideUp(300);
+    $("#rpg-wpn-btn-runestone").slideDown(300);
+  });
+  $("#runemaster-runeblade").click(function(){
+    $("#rpg-wpn-btn-aether").slideUp(300);
+    $("#rpg-wpn-btn-runestone").slideUp(300);
+    $("#rpg-wpn-btn-runeblade").slideDown(300);
+  });
+  $("#runemaster-aether").click(function(){
+    $("#rpg-wpn-btn-runestone").slideUp(300);
+    $("#rpg-wpn-btn-runeblade").slideUp(300);
+    $("#rpg-wpn-btn-aether").slideDown(300);
+  });
+
+});
+</script>
