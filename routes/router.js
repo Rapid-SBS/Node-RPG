@@ -6,10 +6,13 @@ const rpgClass = require('../rpgClass.model');
 
 /* ----- Pages ----- */
 router.get('/', (req, res) => {
-	res.render('index', { 
-		title: 'Home',
-		header: 'RPGenius',
-		description: 'An online tool for curating a D&D-Lite experience.'
+	rpgClass.find((err, content) => {
+		res.render('index', { 
+			title: 'Home',
+			header: 'RPGenius',
+			description: 'An online tool for curating a D&D-Lite experience.',
+			contents: content
+		});
 	});
 });
 
@@ -17,13 +20,6 @@ router.get('/weapon-select', (req, res) => {
 	res.render('weapon-select', { 
 		title: 'Weapon Select',
 		header: 'Weapon Select'
-	});
-});
-
-router.get('/info', (req, res) => {
-	res.render('info', { 
-		title: 'Info Page',
-		description: 'This is a info-page description'
 	});
 });
 
@@ -47,6 +43,17 @@ router.get("/rpgclass/:id", async (req, res) => {
     } catch (error) {
         res.status(500).send(error);
     }
+});
+
+/* --- Example page that pulls all Classes data into template --- */
+router.get('/classes', (req, res) => {
+	rpgClass.find((err, content) => {
+		res.render('classes', { 
+			title: 'Classes Page',
+			description: 'Outputs MongoDB data into template',
+			contents: content
+		});
+	});
 });
 
 /* Old method to get all RPG Classes

@@ -5,6 +5,15 @@
   <h4 class="pad-10 text-orange">{{ description }}</h4>
 </div>
 
-{{{classes}}}
+{{# each contents}}
+	<div class="pad-20 text-center">
+		<h5>{{this.name}}</h5>
+		<p>HP: {{this.hp}}</p>
+		<p>ATT: {{this.att}}</p>
+		<p>DEF: {{this.def}}</p>
+		<p>INT: {{this.int}}</p>
+		<p>RES: {{this.res}}</p>
+	</div>
+{{/each}}
 
 {{> footer}}

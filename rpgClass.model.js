@@ -4,6 +4,8 @@ const Schema = Mongoose.Schema;
 const ClassSchema = new Schema({
 	id: String,
 	name: String,
+	description: String,
+	bg: String,
 	hp: Number,
 	att: Number,
 	def: Number,
