@@ -1,14 +1,15 @@
 /* --- Includes --- */
 const express = require('express');
 const exphbs = require('express-handlebars');
-const mongoose = require('mongoose');
+const Mongoose = require('mongoose');
+const BodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
 const port = 8000;
 
-mongoose.connect('mongodb://localhost/rpg');
-let db = mongoose.connection;
+/* --- Database --- */
+Mongoose.connect("mongodb://localhost/rpg");
 
 /* --- Express Framework --- */
 const app = express();
@@ -22,6 +23,10 @@ app.engine('.hbs', exphbs({
 	partialsDir: path.join(__dirname, 'views/partials'),
 	extname: '.hbs'
 }));
+
+/* --- Body-Parser --- */
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({ extended: true }));
 
 /* --- Router --- */
 const routerIndex = require('./routes/router');
