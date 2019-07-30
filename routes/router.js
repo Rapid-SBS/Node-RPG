@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 /* --- Schemas --- */
-const rpgClass = require('../rpgClass.model'); 
+const rpgClass = require('../rpgClass.model');
+const rpgWeapon = require('../rpgWeapon.model'); 
 
 /* ----- Pages ----- */
 router.get('/', (req, res) => {
@@ -17,10 +18,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/weapon-select', (req, res) => {
-	res.render('weapon-select', { 
-		title: 'Weapon Select',
-		header: 'Weapon Select'
-	});
+	rpgWeapon.find((err, content) => {
+		res.render('weapon-select', { 
+			title: 'Weapon Select',
+			header: 'Weapon Select',
+			contents: content
+		});
+	}).sort({index: 1});
 });
 
 /* --- Get all RPG Classes and output as JSON array --- */

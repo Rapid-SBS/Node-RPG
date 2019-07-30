@@ -16,13 +16,17 @@ const app = express();
 app.use(express.static('public'));
 
 /* --- Express-Handlebars --- */
-app.set('view engine', '.hbs');
-app.engine('.hbs', exphbs({ 
+const hbs = exphbs.create({
 	defaultLayout: 'main',
 	layoutsDir: path.join(__dirname, 'views/layouts'),
 	partialsDir: path.join(__dirname, 'views/partials'),
-	extname: '.hbs'
-}));
+	extname: '.hbs',
+	// Custom Helpers
+	helpers: {
+	}
+})
+app.set('view engine', '.hbs');
+app.engine('.hbs', hbs.engine);
 
 /* --- Body-Parser --- */
 app.use(BodyParser.json());

@@ -2,53 +2,95 @@
 
 <h3 class="pad-t-20 text-gray text-center pulsing-text-dark"> Select a Weapon... </h3>
 
-<div id="weapon-select" class="y-flex-container pad-b-10">
+{{# each contents}}
+  <!-- {{this.name}}-->
+  <div class="rpg-wpn-{{this.id}} card wide-275 mar-20 text-white bg-{{this.bg}} mx-auto">
+  <div class="accordion" id="accordion-{{this.id}}">
+      <div class="card-header text-center">
+        <h4>{{this.name}}</h4>
+      </div>
+      <div class="card-header pad-5 text-center">
+        <button class="btn btn-link text-white text-decoration-none" type="button" data-toggle="collapse" data-target="#collapsebasic{{this.index}}" aria-expanded="true" aria-controls="collapsebasic{{this.index}}">
+          <h6>{{this.basicname}}</h6>
+       </button>
+      </div>
+      <div id="collapsebasic{{this.index}}" class="collapse hidden" aria-labelledby="headingThree" data-parent="#accordion-{{this.id}}">
+        <div class="card-body light-transparency pad-10 text-center">
+          <p class="card-text text-center">{{this.basicdescription}}<br>{{this.basicdamagecalc}}</p>
+        </div>
+        <ul class="list-group text-center">
+          <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+            <span class="badge badge-light text-orange">{{this.basicweaponatt}}</span>
+            Weapon ATT
+          </li>
+        </ul>
+      </div>
+      <div class="card-header pad-5 text-center">
+        <button class="btn btn-link text-white text-decoration-none" type="button" data-toggle="collapse" data-target="#collapsespecial{{this.index}}" aria-expanded="true" aria-controls="collapsespecial{{this.index}}">
+          <h6>{{this.specialname}} <span class="badge badge-light text-teal">{{this.specialmanacost}}</span></h6>
+        </button>
+      </div>
+      <div id="collapsespecial{{this.index}}" class="collapse hidden" aria-labelledby="headingFour" data-parent="#accordion-{{this.id}}">
+        <div class="card-body light-transparency pad-10 text-center">
+          <p class="card-text text-center">{{this.specialdescription}}
+            {{#if this.specialdamagecalc}}
+              <br>{{this.specialdamagecalc}}
+            {{/if}}
+            {{#if this.specialeffect}}
+              <br>{{this.specialeffect}}
+            {{/if}}
+              <br>Costs {{this.specialmanacost}} mana.
+          </p>
+        </div>
+        {{#if this.specialweaponatt}}
+          <ul class="list-group text-center">
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+              <span class="badge badge-light text-orange">{{this.specialweaponatt}}</span>
+                Weapon ATT
+            </li>
+          </ul>
+        {{/if}}
+        {{#if this.specialcritchance}}
+          <ul class="list-group text-center">
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+              <span class="badge badge-light text-teal">{{this.specialcritchance}} </span>
+                Crit Chance
+            </li>
+          </ul>
+        {{/if}}
+        {{#if this.specialmisschance}}
+          <ul class="list-group text-center">
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+              <span class="badge badge-light text-teal">{{this.specialmisschance}} </span>
+                Miss Chance
+            </li>
+          </ul>
+        {{/if}}
+        {{#if this.specialbuffval}}
+          <ul class="list-group text-center">
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+              <span class="badge badge-light text-{{this.specialbuffcolor}}">{{this.specialbuffval}}</span>
+                {{this.specialbuff}}
+            </li>
+          </ul>
+        {{/if}}
+        {{#if this.specialdebuffval}}
+          <ul class="list-group text-center">
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+              <span class="badge badge-light text-{{this.specialdebuffcolor}}">{{this.specialdebuffval}}</span>
+                {{this.specialdebuff}}
+            </li>
+          </ul>
+        {{/if}}
+      </div>
+  </div><!-- /.card -->    
+  </div><!-- /.accordion -->
+{{/each}}
 
 <script>
 var rpgclass = JSON.parse(localStorage.getItem('objRpgclass'));
 var player = JSON.parse(localStorage.getItem('objPlayer'));
-
-console.log(rpgclass);
-
-  $(document).ready(function(){
-
-    // ----- Loads the selected class -----
-    if (rpgclass.name === "Warrior") {
-
-      $("#weapon-select").load("weapons/weapons-warrior.hbs");
-      
-    } else if (rpgclass.name === "Archer") {
-
-      $("#weapon-select").load("weapons/weapons-archer.hbs");
-
-    } else if (rpgclass.name === "Mage") {
-
-      $("#weapon-select").load("weapons/weapons-mage.hbs");
-      
-    } else if (rpgclass.name === "Cleric") {
-
-      $("#weapon-select").load("weapons/weapons-cleric.hbs");
-      
-    } else if (rpgclass.name === "Rogue") {
-
-      $("#weapon-select").load("weapons/weapons-rogue.hbs");
-      
-    } else if (rpgclass.name === "Monk") {
-
-      $("#weapon-select").load("weapons/weapons-monk.hbs");
-      
-    } else if (rpgclass.name === "Rune Master") {
-
-      $("#weapon-select").load("weapons/weapons-runemaster.hbs");
-      
-    } else {
-
-      $("#weapon-select").html("<h2>No Class Selected </h2>");
-    }
-  });
 </script>
-
-</div><!-- /.y-flex-container -->
 
 <div class="footer mt-auto text-center bg-lightgray">
   <div class="container pad-t-20">
