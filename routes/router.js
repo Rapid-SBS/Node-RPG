@@ -5,7 +5,9 @@ const router = express.Router();
 const rpgClass = require('../rpgClass.model');
 const rpgWeapon = require('../rpgWeapon.model'); 
 
-/* ----- Pages ----- */
+/* ---------- Pages ---------- */
+
+// ---[ Home Page ]---
 router.get('/', (req, res) => {
 	rpgClass.find((err, content) => {
 		res.render('index', { 
@@ -17,17 +19,24 @@ router.get('/', (req, res) => {
 	});
 });
 
-router.get('/weapon-select', (req, res) => {
-	rpgWeapon.find((err, content) => {
-		res.render('weapon-select', { 
-			title: 'Weapon Select',
-			header: 'Weapon Select',
-			contents: content
-		});
-	}).sort({index: 1});
+// ---[ Weapon Select Page ]---
+router.get("/weapon-select-:rpgclass", async (req, res) => {
+    try {
+        var content = await rpgWeapon.find(req.params).sort({index: 1}).exec();
+        res.render('weapon-select', { 
+					title: 'Weapon Select',
+					header: 'Weapon Select',
+					contents: content
+				});
+    } catch (error) {
+        res.status(500).send(error);
+    }
 });
 
-/* --- Get all RPG Classes and output as JSON array --- */
+
+/* ----- Database Test Pages ----- */
+
+// Get all RPG Classes and output as JSON array
 router.get("/rpgclasses", async (req, res) => {
     try {
         var result = await rpgClass.find().exec();
@@ -38,7 +47,7 @@ router.get("/rpgclasses", async (req, res) => {
     }
 });
 
-/* --- Get a single class and output as JSON object --- */
+// Get a single class and output as JSON object
 router.get("/rpgclass/:id", async (req, res) => {
     try {
         var result = await rpgClass.findOne(req.params).exec();
@@ -49,7 +58,7 @@ router.get("/rpgclass/:id", async (req, res) => {
     }
 });
 
-/* --- Example page that pulls all Classes data into template --- */
+// Example page that pulls all Classes data into template
 router.get('/classes', (req, res) => {
 	rpgClass.find((err, content) => {
 		res.render('classes', { 
@@ -59,20 +68,6 @@ router.get('/classes', (req, res) => {
 		});
 	});
 });
-
-/* Old method to get all RPG Classes
-router.get('/rpgclasses', function(req, res){
-	console.log('Getting all classes');
-	rpgClass.find({})
-		.exec(function(err, rpgclasses){
-			if (err){
-				res.send('an error has occurred');
-			} else {
-				console.log(rpgclasses);
-				res.json(rpgclasses);
-			}
-		});
-}); */
 
 /* ----- 404 Error ----- */
 router.get('*', (req, res) => {

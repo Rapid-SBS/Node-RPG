@@ -3,6 +3,7 @@ const Schema = Mongoose.Schema;
 
 const WeaponSchema = new Schema({
 	id: String,
+	rpgclass: String,
 	name: String,
 	index: String,
 	bg: String,
