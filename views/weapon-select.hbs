@@ -33,11 +33,11 @@
       <div id="collapsespecial{{this.index}}" class="collapse hidden" aria-labelledby="headingFour" data-parent="#accordion-{{this.id}}">
         <div class="card-body light-transparency pad-10 text-center">
           <p class="card-text text-center">{{this.specialdescription}}
-            {{#if this.specialdamagecalc}}
-              <br>{{this.specialdamagecalc}}
-            {{/if}}
             {{#if this.specialeffect}}
               <br>{{this.specialeffect}}
+            {{/if}}
+            {{#if this.specialdamagecalc}}
+              <br>{{this.specialdamagecalc}}
             {{/if}}
               <br>Costs {{this.specialmanacost}} mana.
           </p>
