@@ -9,10 +9,21 @@ const WeaponSchema = new Schema({
 	bg: String,
 	basicname: String,
 	basicdescription: String,
+	basiceffect: String,
 	basicdamagecalc: String,
 	basicweaponatt: Number,
 	basicmisschance: String,
 	basiccritchance: String,
+	basicbuff: [{
+		val: String,
+		color: String,
+		effect: String
+	}],
+	basicdebuff: [{
+		val: String,
+		color: String,
+		effect: String
+	}],
 	specialname: String,
 	specialdescription: String,
 	specialmanacost: Number,
@@ -21,12 +32,16 @@ const WeaponSchema = new Schema({
 	specialweaponatt: Number,
 	specialcritchance: String,
 	specialmisschance: String,
-	specialbuff: String,
-	specialbuffval: String,
-	specialbuffcolor: String,
-	specialdebuff: String,
-	specialdebuffval: String,
-	specialdebuffcolor: String
+	specialbuff: [{
+		val: String,
+		color: String,
+		effect: String
+	}],
+	specialdebuff: [{
+		val: String,
+		color: String,
+		effect: String
+	}]
 });
 
 module.exports = Mongoose.model('Weapon', WeaponSchema);

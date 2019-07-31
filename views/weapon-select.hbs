@@ -2,10 +2,11 @@
 
 <h3 class="pad-t-20 text-gray text-center pulsing-text-dark"> Select a Weapon... </h3>
 
+<div class="pad-b-20">
 {{# each contents}}
   <!-- {{this.name}}-->
-  <div class="rpg-wpn-{{this.id}} card wide-275 mar-20 text-white bg-{{this.bg}} mx-auto">
-  <div class="accordion" id="accordion-{{this.id}}">
+  <div id="weapon-{{this.index}}" class="rpg-wpn-{{this.id}} card wide-275 mar-20 text-white bg-{{this.bg}} mx-auto">
+    <div class="accordion" id="accordion-{{this.id}}">
       <div class="card-header text-center">
         <h4>{{this.name}}</h4>
       </div>
@@ -16,14 +17,58 @@
       </div>
       <div id="collapsebasic{{this.index}}" class="collapse hidden" aria-labelledby="headingThree" data-parent="#accordion-{{this.id}}">
         <div class="card-body light-transparency pad-10 text-center">
-          <p class="card-text text-center">{{this.basicdescription}}<br>{{this.basicdamagecalc}}</p>
+          <p class="card-text text-center">
+            {{this.basicdescription}}<br>
+            {{#if this.basiceffect}}
+              {{this.basiceffect}}<br>
+            {{/if}}
+            {{this.basicdamagecalc}}
+        </p>
         </div>
+        {{#if this.basicweaponatt}}
+          <ul class="list-group text-center">
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+              <span class="badge badge-light text-orange">{{this.basicweaponatt}}</span>
+              Weapon ATT
+            </li>
+          </ul>
+        {{/if}}
+
         <ul class="list-group text-center">
+        {{#if this.basiccritchance}}
           <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
-            <span class="badge badge-light text-orange">{{this.basicweaponatt}}</span>
-            Weapon ATT
+            <span class="badge badge-light text-teal">{{this.basiccritchance}} </span> Crit Chance<br>
+        {{/if}}
+        {{#if this.basicmisschance}}
+          <div class="pad-5">
+            <span class="badge badge-light text-teal">{{this.basicmisschance}}</span> Miss Chance
+          </div>
+        {{/if}}    
           </li>
         </ul>
+
+        {{#if this.basicbuff}}
+          <ul class="list-group text-center">    
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+            {{#each basicbuff}}
+              <div class="pad-3">
+                <span class="badge badge-light text-{{this.color}}">{{this.val}}</span> {{this.effect}}
+              </div>
+            {{/each}}
+            </li>
+          </ul>
+        {{/if}}
+        {{#if this.basicdebuff}}
+          <ul class="list-group text-center">    
+            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+            {{#each basicbuff}}
+              <div class="pad-3">
+                <span class="badge badge-light text-{{this.color}}">{{this.val}}</span> {{this.effect}}
+              </div>
+            {{/each}}
+            </li>
+          </ul>
+        {{/if}}
       </div>
       <div class="card-header pad-5 text-center">
         <button class="btn btn-link text-white text-decoration-none" type="button" data-toggle="collapse" data-target="#collapsespecial{{this.index}}" aria-expanded="true" aria-controls="collapsespecial{{this.index}}">
@@ -50,46 +95,86 @@
             </li>
           </ul>
         {{/if}}
+
+        <ul class="list-group text-center">
         {{#if this.specialcritchance}}
-          <ul class="list-group text-center">
-            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
-              <span class="badge badge-light text-teal">{{this.specialcritchance}} </span>
-                Crit Chance
-            </li>
-          </ul>
+          <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
+            <span class="badge badge-light text-teal">{{this.specialcritchance}} </span> Crit Chance<br>
         {{/if}}
         {{#if this.specialmisschance}}
-          <ul class="list-group text-center">
+          <div class="pad-5">
+            <span class="badge badge-light text-teal">{{this.specialmisschance}}</span> Miss Chance
+          </div>
+        {{/if}}    
+          </li>
+        </ul>
+        
+        {{#if this.specialbuff}}
+          <ul class="list-group text-center">    
             <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
-              <span class="badge badge-light text-teal">{{this.specialmisschance}} </span>
-                Miss Chance
+            {{#each specialbuff}}
+              <div class="pad-3">
+                <span class="badge badge-light text-{{this.color}}">{{this.val}}</span> {{this.effect}}
+              </div>
+            {{/each}}
             </li>
           </ul>
         {{/if}}
-        {{#if this.specialbuffval}}
-          <ul class="list-group text-center">
+        {{#if this.specialdebuff}}
+          <ul class="list-group text-center">    
             <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
-              <span class="badge badge-light text-{{this.specialbuffcolor}}">{{this.specialbuffval}}</span>
-                {{this.specialbuff}}
-            </li>
-          </ul>
-        {{/if}}
-        {{#if this.specialdebuffval}}
-          <ul class="list-group text-center">
-            <li class="list-group-item align-items-center light-transparency bg-{{this.bg}}" style="padding: .35rem 1.25rem;">
-              <span class="badge badge-light text-{{this.specialdebuffcolor}}">{{this.specialdebuffval}}</span>
-                {{this.specialdebuff}}
+            {{#each specialdebuff}}
+              <div class="pad-3">
+                <span class="badge badge-light text-{{this.color}}">{{this.val}}</span> {{this.effect}}
+              </div>
+            {{/each}}
             </li>
           </ul>
         {{/if}}
       </div>
-  </div><!-- /.card -->    
+    </div><!-- /.card -->    
   </div><!-- /.accordion -->
-{{/each}}
+
+  <div class="text-center">
+    <a role="button" onclick="setWeapon{{this.id}}()" class="btn btn-primary rpg-wpn-select-btn mx-auto" id="rpg-wpn-btn-{{this.index}}" href="name.php" style="display: none;"><span class="pulsing-text-white">Select</span></a>
+  </div>
+
+  <script>
+  const setWeapon{{this.id}} = () => {
+    player.weapon = new Weapon("{{this.name}}", "{{this.id}}");
+    player.basic = "{{this.basicname}}";
+    player.special = "{{this.specialname}}";
+    localStorage.setItem('objPlayer', JSON.stringify(player));
+  }
+  </script>
+  {{/each}}
+</div>
 
 <script>
 var rpgclass = JSON.parse(localStorage.getItem('objRpgclass'));
 var player = JSON.parse(localStorage.getItem('objPlayer'));
+console.log(rpgclass);
+
+$(document).ready(function(){
+
+  // --- Weapon Select Button script ---
+  $("#weapon-1").click(function(){
+    $("#rpg-wpn-btn-2").slideUp(300);
+    $("#rpg-wpn-btn-3").slideUp(300);
+    $("#rpg-wpn-btn-1").slideDown(300);
+  });
+  $("#weapon-2").click(function(){
+    $("#rpg-wpn-btn-1").slideUp(300);
+    $("#rpg-wpn-btn-3").slideUp(300);
+    $("#rpg-wpn-btn-2").slideDown(300);
+  });
+  $("#weapon-3").click(function(){
+    $("#rpg-wpn-btn-1").slideUp(300);
+    $("#rpg-wpn-btn-2").slideUp(300);
+    $("#rpg-wpn-btn-3").slideDown(300);
+  });
+
+});
 </script>
 
 <div class="footer mt-auto text-center bg-lightgray">
