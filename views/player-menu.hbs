@@ -1,0 +1,83 @@
+{{>header}}
+
+<div class="container pad-20">
+
+  <div class="row">
+    <div class="wide-275 mx-auto text-center">
+       <a class="btn btn-primary text-white mar-10" href="character" role="button">View Character</a>
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="wide-275 mx-auto text-center">
+       <a class="btn btn-primary text-white mar-10" href="skill-tree" role="button">View Skill Tree</a>
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="wide-275 mx-auto text-center">
+       <a class="btn btn-primary text-white mar-10" href="level" role="button">Add Experience</a>
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="wide-275 mx-auto text-center">
+       <a class="btn btn-primary text-white mar-10" href="name" role="button">Rename Character</a>
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="wide-275 mx-auto text-center">
+        <button type="button" class="btn btn-danger text-white mar-10" data-toggle="modal" data-target="#confirmModal">Delete Character</button>
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="wide-275 mx-auto text-center">
+       <a class="btn btn-yellow text-white mar-10" href="combattest.html" role="button">Combat (Beta Test)</a>
+    </div>
+  </div><!-- /.row -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalCenterTitle">Warning!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          This option will delete your character and send you to character creation. Do you wish to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a class="btn btn-danger text-white" href="index" role="button">Confirm Deletion</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.container -->
+
+<script>
+var player = JSON.parse(localStorage.getItem('objPlayer'));
+var skills = JSON.parse(localStorage.getItem('objSkills'));
+var rpgclass = JSON.parse(localStorage.getItem('objRpgclass'));
+var weapon = JSON.parse(localStorage.getItem('objWeapon'));
+
+  $(document).ready(function(){
+
+  });
+
+</script>
+
+<div class="footer mt-auto text-center bg-lightgray">
+  <div class="container pad-t-20">
+    <a class="btn btn-dark text-white mar-r-10 mar-l-10" href="rulebook" role="button">View Rulebook</a>
+  </div>
+</div>
+
+{{>footer}}
+

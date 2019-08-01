@@ -33,6 +33,30 @@ router.get("/weapon-select-:rpgclass", async (req, res) => {
     }
 });
 
+// ---[ Character Name Page ]---
+router.get('/name', (req, res) => {
+	res.render('name', { 
+		title: 'Name',
+		header: 'Character Name'
+	});
+});
+
+// ---[ Player Menu Page ]---
+router.get('/player-menu', (req, res) => {
+	res.render('player-menu', { 
+		title: 'Menu',
+		header: 'Player Menu'
+	});
+});
+
+// ---[ Character Sheet Page ]---
+router.get('/character', (req, res) => {
+	res.render('character', { 
+		title: 'Character',
+		header: 'Character Sheet'
+	});
+});
+
 
 /* ----- Database Test Pages ----- */
 

@@ -1,0 +1,136 @@
+{{>header}}
+
+<div id="character-sheet"></div>
+
+<script>
+var player = JSON.parse(localStorage.getItem('objPlayer'));
+var skills = JSON.parse(localStorage.getItem('objSkills'));
+var rpgclass = JSON.parse(localStorage.getItem('objRpgclass'));
+
+  $(document).ready(function(){
+  	player.class = rpgclass.name;
+
+  	player.hp = skills.hp + rpgclass.hp;
+  	player.att = skills.att + rpgclass.att;
+  	player.def = skills.def + rpgclass.def;
+  	player.int = skills.int + rpgclass.int;
+  	player.res = skills.res + rpgclass.res;
+    player.mana = skills.mana;
+
+    player.support = skills.support; 
+    player.attack = skills.attack;
+    player.ultimate = skills.ultimate;
+
+    /* --- Page Markup --- */
+    var markup = `
+    <div class="row pad-t-20">
+      <h5 class="pad-10 mx-auto text-center">Basic Info</h5>
+    </div><!-- /.row -->
+
+    <div>
+      <div class="row">
+        <table class="wide-275 text-center table table-bordered mx-auto">
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>${player.name}</td>
+            </tr>
+            <tr>
+              <td>Level</td>
+              <td>${player.level}</td>
+            </tr>
+            <tr>
+              <td>Class</td>
+              <td>${player.class}</td>
+            </tr>
+            <tr>
+              <td>Weapon</td>
+              <td>${player.weapon.name}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row">
+        <h5 class="pad-10 mx-auto text-center" style>Combat Stats</h5>
+      </div><!-- /.row -->
+      <div class="row">
+        <table class="wide-275 text-center table table-bordered mx-auto">
+          <tbody>
+            <tr>
+              <td>HP</td>
+              <td>${player.hp}</td>
+            </tr>
+            <tr>
+              <td>ATT</td>
+              <td>${player.att}</td>
+            </tr>
+            <tr>
+              <td>DEF</td>
+              <td>${player.def}</td>
+            </tr>
+            <tr>
+              <td>INT</td>
+              <td>${player.int}</td>
+            </tr>
+            <tr>
+              <td>RES</td>
+              <td>${player.res}</td>
+            </tr>
+            <tr>
+              <td>Mana Regen</td>
+              <td>${player.mana}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /.row -->
+
+      <div class="row">
+        <h5 class="pad-10 mx-auto text-center" style>Abilities</h5>
+      </div><!-- /.row -->
+      <div class="row pad-b-20">
+        <table class="wide-275 text-center table table-bordered mx-auto">
+          <tbody>
+            <tr>
+              <td>Basic</td>
+              <td class="font-weight-bold text-red">${player.basic}</td>
+            </tr>
+            <tr>
+              <td>Special</td>
+              <td class="font-weight-bold text-yellow">${player.special}</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td class="font-weight-bold text-green">${player.support}</td>
+            </tr>
+            <tr>
+              <td>Attack</td>
+              <td class="font-weight-bold text-blue">${player.attack}</td>
+            </tr>
+            <tr>
+              <td>Ultimate</td>
+              <td class="font-weight-bold text-purple">${player.ultimate}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /.row -->
+    </div>
+    `;
+    /* --- End Page --- */
+
+    $('#character-sheet').html(markup);
+
+  });
+</script>
+
+<div class="footer mt-auto text-center bg-lightgray">
+  <div class="container pad-t-20">
+    <button class="btn btn-dark text-white mar-r-10 mar-l-10" onclick="goBack()" role="button">Return</button>
+  </div>
+</div>
+  <script>
+    function goBack() {
+      window.history.back();
+   }
+  </script>
+{{>footer}}

@@ -1,0 +1,125 @@
+{{>header}}
+
+<div class="container">
+
+  <div class="row pad-t-40">
+    <div class="col">
+      <p class="mx-auto text-center max-wide-380">You are a <span id="rpg-class"></span><span id="rpg-weapon" class="text-lowercase"></span>.</p>
+      <p class="mx-auto text-center">What is your name?</p>
+    </div>
+  </div><!-- /.row -->
+
+  <form>
+    <div class="form-row pad-b-20">
+      <div class="wide-275 mx-auto text-center">
+        <input type="text" maxlength="30" class="form-control pad-10" id="inputName" aria-describedby="playerName" placeholder="Enter a name..." required>
+        <button id="save-name" type="submit" class="btn btn-primary mar-t-20">Save</button>
+      </div>
+    </div><!-- /.form-row -->
+  </form>
+
+</div><!-- /.container -->
+
+<div id="name-saved" class="text-white text-center pad-10 bg-lightgreen" style="display: none;">
+  <h5 class="pad-10">Name Saved!</h5>
+</div>
+
+<script>
+var player = JSON.parse(localStorage.getItem('objPlayer'));
+var skills = JSON.parse(localStorage.getItem('objSkills'));
+var rpgclass = JSON.parse(localStorage.getItem('objRpgclass'));
+
+  $(document).ready(function(){ // ----- Display Class -----
+    if (rpgclass.name === "Warrior") {
+      $("#rpg-class").text("strong " + rpgclass.name);
+    } else if (rpgclass.name === "Archer") {
+      $("#rpg-class").text("skilled " + rpgclass.name);
+    } else if (rpgclass.name === "Mage") {
+      $("#rpg-class").text("talented " + rpgclass.name);
+    } else if (rpgclass.name === "Cleric") {
+      $("#rpg-class").text("gifted " + rpgclass.name);
+    } else if (rpgclass.name === "Rogue") {
+      $("#rpg-class").text("deadly " + rpgclass.name);
+    } else if (rpgclass.name === "Monk") {
+      $("#rpg-class").text("wise " + rpgclass.name);
+    } else if (rpgclass.name === "Rune Master") {
+      $("#rpg-class").text("powerful " + rpgclass.name);
+    }else {
+      $("#weapon-select").html("<h2>No Class Selected </h2>");
+    } 
+  });
+
+  $(document).ready(function(){ // ----- Display Weapon -----
+    if (player.weapon.id === "battleaxe") {
+      $("#rpg-weapon").text(", charging into battle and shattering enemy defenses with your battle axe");
+    } else if (player.weapon.id === "warhammer") {
+      $("#rpg-weapon").text(", charging into battle and battering enemies with your mighty war hammmer");
+    } else if (player.weapon.id === "bow") {
+      $("#rpg-weapon").text(", bombarding enemies with arrows from your bow");
+    } else if (player.weapon.id === "crossbow") {
+      $("#rpg-weapon").text(", piercing enemy defenses with your crossbow");
+    } else if (player.weapon.id === "longbow") {
+      $("#rpg-weapon").text(", supporting allies with your nature abilities and attacking with your longbow");
+    } else if (player.weapon.id === "sword") {
+      $("#rpg-weapon").text(", defending your allies with your sword and shield as the ultimate protector");
+    } else if (player.weapon.id === "mace") {
+      $("#rpg-weapon").text(", weilding powerful light abilities and protecting allies with your mace and shield");
+    } else if (player.weapon.id === "quarterstaff") {
+      $("#rpg-weapon").text(", supporting your allies with your light abilities and Quarterstaff");
+    } else if (player.weapon.id === "tome") {
+      $("#rpg-weapon").text(", supporting your allies with your light abilities and Holy Tome");
+    } else if (player.weapon.id === "ice") {
+      $("#rpg-weapon").text(", able to attack and defend using your powerful ice abilities");
+    } else if (player.weapon.id === "fire") {
+      $("#rpg-weapon").text(", channeling your power into devastating attacks with your fire stone");
+    } else if (player.weapon.id === "lightning") {
+      $("#rpg-weapon").text(", unleashing the power of lightning upon your foes");
+    } else if (player.weapon.id === "bostaff") {
+      $("#rpg-weapon").text(" and a master of the bo staff, skilled in disabling your opponents");
+    } else if (player.weapon.id === "brawler") {
+      $("#rpg-weapon").text(", a master of martial arts who uses chi manipulation to breach enemy defenses" );
+    } else if (player.weapon.id === "windfu") {
+      $("#rpg-weapon").text(", mixing martial arts with the power of the wind element");
+    } else if (player.weapon.id === "shuriken") {
+      $("#rpg-weapon").text(", the ultimate assassin with your shuriken and shadow clones");
+    } else if (player.weapon.id === "sai") {
+      $("#rpg-weapon").text(", ravaging enemies with your dual sai and shadow abilities");
+    } else if (player.weapon.id === "dagger") {
+      $("#rpg-weapon").text(", wreaking havoc with your dagger and alchemical potions");
+    } else if (player.weapon.id === "runeblade") {
+      $("#rpg-weapon").text(", channeling the elements through your runeblade with the might of a warrior and the powers of a mage");
+    } else if (player.weapon.id === "runestone") {
+      $("#rpg-weapon").text(", wielding and combining multiple elements with your collection of runestones");
+    } else if (player.weapon.id === "golem") {
+      $("#rpg-weapon").text(", summoning and empowering golems to wreak havoc on your foes");
+    } else {
+      $("#rpg-weapon").text(" who wields a " + player.weapon.id);
+    }
+  });
+
+  $(document).ready(function(){ // ----- Save Name -----
+    $("#save-name").click(function(){
+      event.preventDefault()
+      var playerName = document.getElementById('inputName').value
+      player.name = playerName;
+      localStorage.setItem('objPlayer', JSON.stringify(player));
+      $('#name-saved').fadeIn('slow', function(){
+        $('#name-saved').delay(3000).fadeOut();
+        }
+       )
+    });
+  });
+</script>
+
+<div class="footer mt-auto text-center bg-lightgray">
+  <div class="container pad-t-20">
+    <button class="btn btn-dark text-white mar-r-10 mar-l-10" onclick="goBack()" role="button">Return</button>
+    <a class="btn btn-blue text-white mar-r-10 mar-l-10" href="player-menu" role="button">Continue</a>
+  </div>
+</div>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+{{>footer}}
