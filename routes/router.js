@@ -57,6 +57,14 @@ router.get('/character', (req, res) => {
 	});
 });
 
+// ---[ Level Page ]---
+router.get('/level', (req, res) => {
+	res.render('level', {
+		layout: 'levelpage',
+		title: 'Level',
+		header: 'Character Level'
+	});
+});
 
 /* ----- Database Test Pages ----- */
 

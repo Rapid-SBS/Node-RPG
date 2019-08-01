@@ -1,0 +1,180 @@
+{{>header}}
+<div class="container max-wide-380">
+
+  <div class="row text-center mx-auto pad-20">
+    <div class="col">
+      <h5 id="player-level" class="pad-5"></h5>
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row text-center">
+    <div class="col" style="width: 100%; margin-bottom: -80px; z-index: -1;">
+      <div id="exp-bar" class="mx-auto" 
+      data-stroke="#00dd00" 
+      data-stroke-width="15" 
+      data-stroke-trail-width="15"
+      style="width: 100%; height: 20%; margin-top: -10px; "></div>
+    </div>
+  </div>
+
+  <div id="level-up" class="text-center text-lightgreen" style="display: none; margin-top: -15px;">
+    <h4 class="pad-b-10">Level Up!</h4>
+  </div>
+
+</div><!-- /.container -->
+
+<div style="background-color: rgba(0, 196, 255, 0.2);">
+  <div class="row text-center mx-auto pad-t-20">
+    <div class="col">
+      <p>To manually add Experience points,<br>enter a value between 1 and 100.</p>
+    </div>
+  </div><!-- /.row -->
+
+  <div id="input-invalid" class="text-white text-center text-danger" style="display: none; margin-top: -15px;">
+    <h5 class="pad-b-10">Invalid Input!</h5>
+  </div>
+
+  <form>
+    <div class="form-row pad-b-20 justify-content-center">
+      <div class="d-inline">
+        <input type="number" maxlength="3" class="form-control mx-auto" style="width: 80px;" id="inputExp" aria-describedby="playerName" placeholder="Enter #" required>
+      </div>
+      <div class="d-inline">
+        <button type="submit" id="add-exp" class="btn btn-primary mar-l-10">Add Experience</button>
+      </div>
+    </div><!-- /.form-row -->
+  </form>
+</div>
+
+<div>
+  <div class="row text-center mx-auto pad-t-20">
+    <div class="col">
+      <p>Or, directly set your level<br>using the slider below.</p>
+    </div>
+  </div><!-- /.row -->
+
+  <div id="lvl" class="text-center mx-auto wide-220">
+    <input
+    type="range" 
+    min="0" 
+    max="10" 
+    step="1" 
+    value="1" 
+    >
+    <h5>New Level: {{ value }}</h5>
+    <button @click="setLevel" class="btn btn-primary mar-20">Set Level</button>
+  </div>
+</div><!-- /.container -->
+
+<div id="level-saved" class="text-white text-center pad-10 bg-lightgreen" style="display: none;">
+  <h5 class="pad-10">Level Updated!</h5>
+</div>
+
+<script>
+var player = JSON.parse(localStorage.getItem('objPlayer'));
+
+var currentExp = parseInt(player.exp);
+var levelExp = parseInt(player.level) * 20 + 100;
+var progressExp = (currentExp / levelExp) * 100;
+
+// --- Initialize Progress Bar
+var expBar = new ldBar("#exp-bar");
+expBar.set(progressExp);
+
+$('input[type="range"]').rangeslider({
+
+    // Feature detection the default is `true`.
+    // Set this to `false` if you want to use
+    // the polyfill also in Browsers which support
+    // the native <input type="range"> element.
+    polyfill: true,
+
+    // Default CSS classes
+    rangeClass: 'rangeslider',
+    disabledClass: 'rangeslider--disabled',
+    horizontalClass: 'rangeslider--horizontal',
+    verticalClass: 'rangeslider--vertical',
+    fillClass: 'rangeslider__fill',
+    handleClass: 'rangeslider__handle',
+
+    // Callback function
+    onInit: function() {},
+
+    // Callback function
+    onSlide: function(position, value) {},
+
+    // Callback function
+    onSlideEnd: function(position, value) {}
+});
+
+
+// ===== Experience Bar + Add Exp =====
+$(document).ready(function(){   
+  // --- Display Initial Values
+  $("#player-level").text("Current Level: " + player.level);
+  $("#current-exp").text(currentExp);
+  $("#level-exp").text(" / " + levelExp);
+
+  // --- Add Experience ---
+  $("#add-exp").click(function(){
+    event.preventDefault();
+    let addExp = document.getElementById('inputExp').value;
+    addExp = parseInt(addExp);
+
+    // --- Evaluate validity of input ---
+    if (isNaN(addExp) || addExp < 1 || addExp > 100) {
+      $('#input-invalid').fadeIn('slow', function(){
+        $('#input-invalid').delay(3000).fadeOut();
+      })
+    } else {
+      // --- Force variables to reevaluate
+      currentExp = parseInt(currentExp) + parseInt(addExp);
+      levelExp = parseInt(player.level) * 20 + 100;
+      progressExp = (currentExp / levelExp) * 100;
+
+      console.log("Current Exp:" + currentExp);
+      console.log("AddExp:" + addExp);
+
+      // --- Level-up logic ---
+      if (currentExp >= levelExp && player.level <= 9 ) {
+        let remainder = parseInt(currentExp) - parseInt(levelExp);
+        currentExp = 0 + parseInt(remainder);
+        progressExp = (currentExp / levelExp) * 100;  
+        if (player.level <= 9) {
+          player.level++;
+          $('#level-up').fadeIn('slow', function(){
+            $('#level-up').delay(1500).fadeOut();
+          })
+        }
+      }
+      if (player.level == 10) {
+        currentExp = 300;
+        levelExp = 300;
+      }
+
+      // --- Update Player object
+      player.exp = currentExp;
+      localStorage.setItem('objPlayer', JSON.stringify(player));
+
+      // --- Display updated values
+      expBar.set(progressExp);
+      console.log("Exp:" + progressExp + "%");
+      console.log(currentExp + " / " + levelExp);
+      $("#player-level").text("Current Level: " + player.level);
+    }
+  });
+});
+</script>
+
+<div class="footer mt-auto text-center bg-lightgray">
+  <div class="container pad-t-20">
+    <button class="btn btn-dark text-white mar-r-10 mar-l-10" onclick="goBack()" role="button">Return</button>
+    <a class="btn btn-blue text-white mar-r-10 mar-l-10" href="player-menu" role="button">Continue</a>
+  </div>
+</div>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+{{>footer}}

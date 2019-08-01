@@ -21,8 +21,8 @@ var rpgclass = JSON.parse(localStorage.getItem('objRpgclass'));
     player.attack = skills.attack;
     player.ultimate = skills.ultimate;
 
-    /* --- Page Markup --- */
-    var markup = `
+    /* --- Page Content --- */
+    var content = `
     <div class="row pad-t-20">
       <h5 class="pad-10 mx-auto text-center">Basic Info</h5>
     </div><!-- /.row -->
@@ -118,7 +118,7 @@ var rpgclass = JSON.parse(localStorage.getItem('objRpgclass'));
     `;
     /* --- End Page --- */
 
-    $('#character-sheet').html(markup);
+    $('#character-sheet').html(content);
 
   });
 </script>
