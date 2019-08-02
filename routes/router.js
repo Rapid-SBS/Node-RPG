@@ -3,7 +3,9 @@ const router = express.Router();
 
 /* --- Schemas --- */
 const rpgClass = require('../rpgClass.model');
-const rpgWeapon = require('../rpgWeapon.model'); 
+const rpgWeapon = require('../rpgWeapon.model');
+const rpgPassive = require('../rpgPassive.model'); 
+const rpgAbility = require('../rpgAbility.model'); 
 
 /* ---------- Pages ---------- */
 
@@ -68,6 +70,21 @@ router.get('/level', (req, res) => {
 
 /* ----- Database Test Pages ----- */
 
+// Get a selected Weapon's Abilities
+router.get("/abilities-:rpgclass", async (req, res) => {
+    try {
+        var content = await rpgAbility.find(req.params).sort({index: 1}).exec();
+        res.render('abilities', {
+        	title: 'Abilities',
+        	header: 'Abilities Page',
+        	description: 'Outputs Abilities into a template.',
+        	contents: content
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
 // Get all RPG Classes and output as JSON array
 router.get("/rpgclasses", async (req, res) => {
     try {
@@ -95,7 +112,7 @@ router.get('/classes', (req, res) => {
 	rpgClass.find((err, content) => {
 		res.render('classes', { 
 			title: 'Classes Page',
-			description: 'Outputs MongoDB data into template',
+			description: 'Outputs Classes into template',
 			contents: content
 		});
 	});

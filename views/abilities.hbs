@@ -1,0 +1,167 @@
+{{> header}}
+
+{{#each contents}}
+	<div class="pad-20 text-center">
+		<h3 class="pad-b-20 text-{{this.bg}}">Ability: {{this.name}}</h3>
+
+		<h5>Display Properties</h5>
+		<table class="table table-striped table-bordered wide-380 mx-auto">
+			<tr>
+				<td>ID</td>
+				<td>{{this.id}}</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td>{{this.name}}</td>
+			</tr>
+			<tr>
+				<td>Index</td>
+				<td>{{this.index}}</td>
+			</tr>
+			<tr>
+				<td>Class</td>
+				<td>{{this.rpgclass}}</td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td>{{this.type}}</td>
+			</tr>
+			<tr>
+				<td>BG</td>
+				<td>{{this.bg}}</td>
+			</tr>
+			<tr>
+				<td>Level Req</td>
+				<td>{{this.levelreq}}</td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td>{{this.description}}</td>
+			</tr>
+			<tr>
+				<td>Effect</td>
+				<td>{{this.effect}}</td>
+			</tr>
+			<tr>
+				<td>Damage Calc</td>
+				<td>{{this.damagecalc}}</td>
+			</tr>
+		</table>
+
+		<h5>Functional Properties</h5>
+		<table class="table table-striped table-bordered wide-380 mx-auto">
+			<tr>
+				<td>Mana Cost</td>
+				<td>{{this.manacost}}</td>
+			</tr>
+			<tr>
+				<td>Target</td>
+				<td>{{this.target}}</td>
+			</tr>
+			<tr>
+				<td>Weapon ATT</td>
+				<td>{{this.weaponatt}}</td>
+			</tr>
+			<tr>
+				<td>Miss Rate</td>
+				<td>{{this.missrate}}</td>
+			</tr>
+			<tr>
+				<td>Crit Rate</td>
+				<td>{{this.critrate}}</td>
+			</tr>
+			<tr>
+				<td>Damage Type</td>
+				<td>{{this.dmgtype}}</td>
+			</tr>
+			<tr>
+				<td>Damage Multiplier</td>
+				<td>{{this.multiplier}}</td>
+			</tr>
+			<tr>
+				<td>Additive Damage</td>
+				<td>{{this.additive}}</td>
+			</tr>
+			<tr>
+				<td>Pierce</td>
+				<td>{{this.pierce}}</td>
+			</tr>
+			<tr>
+				<td>Heal</td>
+				<td>{{this.heal}}</td>
+			</tr>
+		</table>
+
+		{{#if buff}}
+			<h5>Buff Array</h5>
+			<table class="table table-striped table-bordered wide-380 mx-auto">
+				{{#each buff}}
+				<tr>
+					<td>Val</td>
+					<td>{{this.val}}</td>
+				</tr>
+				<tr>
+					<td>Color</td>
+					<td>{{this.color}}</td>
+				</tr>
+				<tr>
+					<td>Attack</td>
+					<td>{{this.attack}}</td>
+				</tr>
+				<tr>
+					<td>ATT</td>
+					<td>{{this.att}}</td>
+				</tr>
+				<tr>
+					<td>DEF</td>
+					<td>{{this.def}}</td>
+				</tr>
+				<tr>
+					<td>INT</td>
+					<td>{{this.int}}</td>
+				</tr>
+				<tr>
+					<td>RES</td>
+					<td>{{this.res}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		{{/if}}
+
+		{{#if debuff}}
+			<h5>Debuff Array</h5>
+			<table class="table table-striped table-bordered wide-380 mx-auto">
+				{{#each debuff}}
+				<tr>
+					<td>Val</td>
+					<td>{{this.val}}</td>
+				</tr>
+				<tr>
+					<td>Color</td>
+					<td>{{this.color}}</td>
+				</tr>
+				<tr>
+					<td>ATT</td>
+					<td>{{this.att}}</td>
+				</tr>
+				<tr>
+					<td>DEF</td>
+					<td>{{this.def}}</td>
+				</tr>
+				<tr>
+					<td>INT</td>
+					<td>{{this.int}}</td>
+				</tr>
+				<tr>
+					<td>RES</td>
+					<td>{{this.res}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		{{/if}}
+
+		
+	</div>
+{{/each}}
+
+{{> footer}}
