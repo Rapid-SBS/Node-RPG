@@ -9,6 +9,7 @@ const AbilitySchema = new Schema({
 	index: String,
 	rpgclass: String,
 	weapon: String,
+	ability: String,
 	type: String,
 	bg: String,
 	levelreq: Number,
@@ -28,6 +29,7 @@ const AbilitySchema = new Schema({
 	additive: Number,
 	pierce: Number,
 	heal: String,
+	mana: Number,
 
 	/* Buff/Debuff Arrays */
 	buff: [{

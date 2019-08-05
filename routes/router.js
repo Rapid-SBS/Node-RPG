@@ -73,7 +73,7 @@ router.get('/level', (req, res) => {
 // Get a selected Weapon's Abilities
 router.get("/abilities-:weapon", async (req, res) => {
     try {
-        var content = await rpgAbility.find(req.params).sort({index: 1}).exec();
+        var content = await rpgAbility.find(req.params).exec();
         var rpgWeapon = req.params.weapon;
         res.render('abilities', {
         	title: 'Abilities',
