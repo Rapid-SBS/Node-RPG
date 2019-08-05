@@ -1,10 +1,12 @@
 {{> header}}
 
+<h3 class="pad-20 capital	card text-center">{{rpgweapon}} Abilities</h3>
+
 <div id="accordion">
 
 {{#each contents}}
 	<div class="pad-t-20 text-center">
-			<h3 class="pad-b-20 text-{{this.bg}}" data-toggle="collapse" data-target="#collapse{{this.id}}" aria-expanded="true" aria-controls="collapse{{this.id}}">{{this.name}}</h3>
+			<h5 class="pad-b-20 text-{{this.bg}}" data-toggle="collapse" data-target="#collapse{{this.id}}" aria-expanded="true" aria-controls="collapse{{this.id}}">{{this.name}}</h5>
 			<div class="card">
 			<div id="collapse{{this.id}}" class="collapse" data-parent="#accordion">
 				<h5 class="pad-10">Display Properties</h5>

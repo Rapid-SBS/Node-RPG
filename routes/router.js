@@ -74,11 +74,13 @@ router.get('/level', (req, res) => {
 router.get("/abilities-:weapon", async (req, res) => {
     try {
         var content = await rpgAbility.find(req.params).sort({index: 1}).exec();
+        var rpgWeapon = req.params.weapon;
         res.render('abilities', {
         	title: 'Abilities',
         	header: 'Abilities Page',
         	description: 'Outputs Abilities into a template.',
-        	contents: content
+        	contents: content,
+        	rpgweapon: rpgWeapon
         });
     } catch (error) {
         res.status(500).send(error);
