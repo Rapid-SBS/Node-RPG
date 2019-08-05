@@ -19,10 +19,11 @@ const AbilitySchema = new Schema({
 	/* Functional Properties */
 	manacost: Number,
 	target: String, // self, ally, allies, enemy, enemies
+	dmgtype: String, // att or int
+	crittype: String, // dmg or status
 	weaponatt: Number,
 	missrate: Number, // 0-3
 	critrate: Number, // 0-3
-	dmgtype: String, // att or int
 	multiplier: Number,
 	additive: Number,
 	pierce: Number,
