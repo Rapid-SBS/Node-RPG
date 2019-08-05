@@ -31,7 +31,11 @@ const AbilitySchema = new Schema({
 	buff: [{
 		val: String,
 		color: String,
-		effect: String
+		effect: String,
+		att: Number,
+		def: Number,
+		int: Number,
+		res: Number
 	}],
 	debuff: [{
 		val: String,
