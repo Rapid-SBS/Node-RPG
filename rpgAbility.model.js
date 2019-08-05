@@ -8,6 +8,7 @@ const AbilitySchema = new Schema({
 	name: String,
 	index: String,
 	rpgclass: String,
+	weapon: String,
 	type: String,
 	bg: String,
 	levelreq: Number,
@@ -40,7 +41,11 @@ const AbilitySchema = new Schema({
 	debuff: [{
 		val: String,
 		color: String,
-		effect: String
+		effect: String,
+		att: Number,
+		def: Number,
+		int: Number,
+		res: Number
 	}],
 
 });

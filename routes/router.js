@@ -71,7 +71,7 @@ router.get('/level', (req, res) => {
 /* ----- Database Test Pages ----- */
 
 // Get a selected Weapon's Abilities
-router.get("/abilities-:rpgclass", async (req, res) => {
+router.get("/abilities-:weapon", async (req, res) => {
     try {
         var content = await rpgAbility.find(req.params).sort({index: 1}).exec();
         res.render('abilities', {

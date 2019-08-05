@@ -1,4 +1,6 @@
-<div class="text-white text-center bg-primary">
-  <h5 class="pad-10"> {{ header }} </h5>
-  <p>{{ description }}</p>
+<div class="text-white text-center bg-primary pad-b-10">
+  <h5 class="pad-t-10"> {{ header }} </h5>
+  {{#if description}}
+  	<p class="pad-t-10">{{ description }}</p>
+  {{/if}}
 </div>
