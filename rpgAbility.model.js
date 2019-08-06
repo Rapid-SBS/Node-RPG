@@ -31,6 +31,15 @@ const AbilitySchema = new Schema({
 	heal: String,
 	mana: Number,
 
+	/* Status Array */
+	status: [{
+		val: String,
+		target: String,
+		name: String,
+		effect: String,
+		duration: Number
+	}],
+
 	/* Buff/Debuff Arrays */
 	buff: [{
 		val: String,
