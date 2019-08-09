@@ -1,0 +1,163 @@
+_id,id,name,rpgclass,weapon,ability,type,bg,levelreq,description,damagecalc,manacost,target,weaponatt,dmgtype,crittype,missrate,critrate,multiplier,additive,pierce
+ObjectId("5d448dd5155d0e2b2cfd11a1"),slash,Slash,warrior,sword,basic,attack,red,0,Strike your enemy with your sword.,DMG = Weapon ATT + Player ATT.,0,enemy,2,att,dmg,1,1,1,0,0
+ObjectId("5d44abf2155d0e2b2cfd11a2"),shield_ally,Shield Ally,warrior,sword,special,buff,yellow,0,Use your shield to protect yourself or one ally.,,1,ally,,,,,,,,
+ObjectId("5d48568933643a47fc8fd578"),taunt,Taunt,warrior,sword,support,buff,green,2,Force all enemies to direct single-target attacks towards you for 2 turns.,,2,enemies,,,,,,,,
+ObjectId("5d48586233643a47fc8fd579"),diversion,Diversion,warrior,sword,support,buff,green,2,Distract an enemy, giving your allies a chance to target its weak point.,,3,enemy,,,,,,,,
+ObjectId("5d485a9333643a47fc8fd57a"),shield_bash,Shield Bash,warrior,sword,attack,attack,blue,5,Bash an enemy with your shield.,DMG = Weapon ATT + Player ATT.,6,enemy,8,att,status,1,2,1,0,0
+ObjectId("5d485ca533643a47fc8fd57b"),spin_attack,Spin Attack,warrior,sword,attack,attack,blue,5,Charge into the fray and whip your sword around, damaging all enemies.,DMG = 2 x (Player ATT).,6,enemies,0,att,dmg,1,1,2,0,0
+ObjectId("5d485dd133643a47fc8fd57c"),aegis_armor,Aegis Armor,warrior,sword,ultimate,buff,purple,8,Summon the legendary Aegis Armor for 2 turns, drastically raising your defenses.,,12,self,,,,,,,,
+ObjectId("5d48692a33643a47fc8fd57d"),bastion,Bastion,warrior,sword,ultimate,buff,purple,8,Empower your shield with mana to increase its reach, guarding your allies against physical damage for 1 turn.,,10,other-allies,,,,,,,,
+ObjectId("5d48700633643a47fc8fd57e"),slam,Slam,warrior,warhammer,basic,attack,red,0,Slam an enemy with your war hammer.,DMG = Weapon ATT + Player ATT.,0,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d48709333643a47fc8fd57f"),hammer_swing,Hammer Swing,warrior,warhammer,special,attack,yellow,0,Swing your war hammer and bowl over enemies.,DMG = Weapon ATT + Player ATT.,3,enemies,1,att,dmg,1,1,1,0,0
+ObjectId("5d4871aa33643a47fc8fd580"),eat_chicken,Eat Chicken,warrior,warhammer,support,heal,green,2,Take a bite of the drumstick you've been saving and restore health.,HEAL = 5 HP.,3,self,0,heal,heal,0,0,1,5,
+ObjectId("5d48727033643a47fc8fd581"),rampage,Rampage,warrior,warhammer,support,buff,green,2,The heat of battle energizes you, sending you on an unstoppable rampage.,,3,self,,,,,,,,
+ObjectId("5d4873c133643a47fc8fd582"),pulverize,Pulverize,warrior,warhammer,attack,attack,blue,5,Repeatedly smash an enemy with your war hammer.,DMG = 2 x (Player ATT).,6,enemy,0,att,dmg,1,1,2,0,4
+ObjectId("5d4875f229bb4947fc3becef"),template,Template,all,all,,,,0,,,0,,0,,,0,0,0,0,0
+ObjectId("5d4878b433643a47fc8fd583"),hammer_uppercut,Hammer Uppercut,warrior,warhammer,attack,attack,blue,5,Uppercut an enemy with your war hammer.,DMG = Player ATT.,6,enemy,0,att,dmg,1,1,1,0,0
+ObjectId("5d487de833643a47fc8fd584"),bone_shatter,Bone Shatter,warrior,warhammer,ultimate,attack,purple,8,Slam your war hammer hard enough to shatter bone and steel.,DMG = 4 x (Player ATT).,10,enemy,0,att,dmg,0,1,4,0,6
+ObjectId("5d487efb33643a47fc8fd585"),seismic_quake,Seismic Quake,warrior,warhammer,ultimate,attack,purple,8,Strike the ground in front of you and drive massive rock formations out of the earth beneath your enemies.,DMG = 3 x (Player ATT).,12,enemies,0,att,dmg,0,1,3,0,0
+ObjectId("5d488b7633643a47fc8fd586"),cleave,Cleave,warrior,battleaxe,basic,attack,red,0,Swing your mighty battle axe.,DMG = Weapon ATT + Player ATT.,0,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d488cf633643a47fc8fd587"),sunder_armor,Sunder Armor,warrior,battleaxe,special,attack,yellow,0,Bring down your battle axe with a heavy strike.,DMG = Weapon ATT + Player ATT.,2,enemy,3,att,dmg,1,1,1,0,2
+ObjectId("5d488fac33643a47fc8fd588"),battle_roar,Battle Roar,warrior,battleaxe,support,buff,green,2,Let out a fierce battle roar that intimidates enemies and emboldens allies.,,5,all,,,,,,,,
+ObjectId("5d4890b333643a47fc8fd589"),bloodlust,Bloodlust,warrior,battleaxe,support,buff,green,2,On your next attack, you heal the same amount of damage dealt.,,4,enemy,,,,,,,,
+ObjectId("5d4892fe33643a47fc8fd58a"),helix_strike,Helix Strike,warrior,battleaxe,attack,attack,blue,5,Spin around and slam your battle axe into your opponent with extreme force.,DMG = Weapon ATT + Player ATT.,6,enemy,8,att,dmg,1,2,1,0,0
+ObjectId("5d48950933643a47fc8fd58b"),shatter,Shatter,warrior,battleaxe,attack,attack,blue,5,Strike your enemy and shatter their defenses.,DMG = 2 x (Player ATT).,7,enemy,0,att,dmg,1,1,2,0,0
+ObjectId("5d48960833643a47fc8fd58c"),berserk,Berserk,warrior,battleaxe,ultimate,attack,purple,8,Become an unstoppable force of rage, dealing damage to all enemies in your path.,DMG = 2 x (Player ATT).,10,enemies,0,att,dmg,0,1,3,0,0
+ObjectId("5d48970233643a47fc8fd58d"),titan_slayer,Titan Slayer,warrior,battleaxe,ultimate,attack,purple,8,Launch into the air and strike your enemy with superhuman strength.,DMG = 5 x (Player ATT).,12,enemy,0,att,dmg,0,0,5,0,12
+ObjectId("5d4899f533643a47fc8fd58e"),cross_strike,Cross Strike,monk,bostaff,basic,attack,red,0,Strike your opponent with your bo staff.,DMG = Weapon ATT + Player ATT.,0,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d489c4133643a47fc8fd58f"),thrust,Thrust,monk,bostaff,special,attack,yellow,0,Thrust your bo staff at your opponent.,DMG = Weapon ATT + Player ATT.,2,enemy,2,att,status,1,1,1,0,0
+ObjectId("5d489e1533643a47fc8fd590"),meditate,Meditate,monk,bostaff,support,buff,green,2,Take a moment to center yourself, revitalizing your mind and body.,HEAL = Player INT.,2,self,0,heal,heal,0,0,1,0,
+ObjectId("5d489ef733643a47fc8fd591"),staff_spin,Staff Spin,monk,bostaff,support,buff,green,2,Rapidly twirl your staff around you.,,2,self,,,,,,,,
+ObjectId("5d48a19533643a47fc8fd592"),overhead_smash,Overhead Smash,monk,bostaff,attack,attack,blue,5,Smash your staff into your opponent's head.,DMG = Weapon ATT + Player ATT.,6,enemu,8,att,dmg,1,1,1,0,0
+ObjectId("5d48a55133643a47fc8fd593"),spinning_strike,Spinning Strike,monk,bostaff,attack,attack,blue,5,Damage all enemies.,DMG = Weapon ATT + Player ATT,7,enemies,4,att,status,1,2,1,0,0
+ObjectId("5d48a6f933643a47fc8fd594"),battering_assault,Battering Assault,monk,bostaff,ultimate,attack,purple,8,Drive your opponent back with an overwhelming combo attack.,DMG = 5 x (Player ATT).,9,enemy,0,att,dmg,0,1,5,0,0
+ObjectId("5d48a7dc33643a47fc8fd595"),unbreakable_spirit,Unbreakable Spirit,monk,bostaff,ultimate,buff,purple,8,Strengthen the spirit of you and your allies.,,10,allies,,,,,,,,
+ObjectId("5d48aa2d33643a47fc8fd596"),uppercut,Uppercut,monk,brawler,basic,attack,red,0,Slam your fist into your opponent.,DMG = Weapon ATT + Player ATT.,0,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d48b14e33643a47fc8fd597"),chi_burst,Chi Burst,monk,brawler,special,attack,yellow,0,Launch a metaphysical attack.,DMG = Weapon ATT + Player INT.,2,enemy,3,int,dmg,1,1,1,0,4
+ObjectId("5d48b1e633643a47fc8fd598"),crane_kick,Crane Kick,monk,brawler,attack,attack,blue,2,Swiftly kick your opponent.,DMG = 3 x (Player ATT).,4,enemy,0,att,dmg,1,1,3,0,0
+ObjectId("5d48b27833643a47fc8fd599"),destabilize,Destabilize,monk,brawler,attack,attack,blue,2,Attack the pressure points of your foe, disrupting their Chi flow.,DMG = 2 x (Player INT).,5,enemy,0,int,dmg,1,3,2,0,0
+ObjectId("5d48b39033643a47fc8fd59a"),transcendence,Transcendence,monk,brawler,support,heal,green,5,Transcend the pain you've experienced, restoring life to your body.,HEAL = 3 x (Player INT).,6,self,0,int,dmg,0,0,3,0,0
+ObjectId("5d48b46e33643a47fc8fd59b"),zen_aura,Zen Aura,monk,brawler,support,buff,green,5,Gift your allies a moment of pure serenity, restoring their mana.,,8,other-allies,,,,,,,,
+ObjectId("5d48b4f633643a47fc8fd59c"),sky_breaker,Sky Breaker,monk,brawler,ultimate,attack,purple,8,Soar into the sky and come crashing down on your opponent.,DMG = Weapon ATT + Player ATT.,9,enemy,20,att,dmg,1,1,1,0,0
+ObjectId("5d48b5cf33643a47fc8fd59d"),dragon_force,Dragon Force,monk,brawler,ultimate,attack,purple,8,Your Chi takes the form of a dragon and consumes your enemies.,DMG = 3 x (Player INT).,12,enemies,0,int,dmg,0,1,3,0,12
+ObjectId("5d49ae83b1324640b4a82744"),bludgeon,Bludgeon,cleric,mace,basic,attack,red,0,strike an enemy with your mace.,DMG = Weapon ATT + Player ATT.,0,enemy,2,att,dmg,1,1,1,0,0
+ObjectId("5d49af4cb1324640b4a82745"),shield_ally,Shield Ally,cleric,mace,special,buff,yellow,0,Use your shield to protect yourself or 1 ally.,,2,ally,,,,,,,,
+ObjectId("5d49bbcbb1324640b4a82746"),solar_wrath,Solar Wrath,cleric,mace,attack,attack,blue,2,Blast your foe with radiant light.,DMG = 2 x (Player INT).,4,enemy,0,int,dmg,1,1,1,0,4
+ObjectId("5d49bc5fb1324640b4a82747"),smite,Smite,cleric,mace,attack,attack,blue,2,Smite your foe with your heavy mace.,DMG = Weapon ATT + Player ATT.,3,enemy,4,att,dmg,1,2,1,0,0
+ObjectId("5d49bd8bb1324640b4a82748"),light_surge,Light Surge,cleric,mace,support,heal,green,5,Heal an ally and boost their attack for 1 turn.,HEAL = 2 x (Player INT).,5,ally,0,heal,heal,0,1,2,0,0
+ObjectId("5d49bfd9b1324640b4a82749"),cleansing_light,Cleansing Light,cleric,mace,support,heal,green,5,Holy light cleanses and heals all allies.,HEAL = Player INT.,7,allies,0,heal,heal,0,1,1,0,0
+ObjectId("5d49cdfcb1324640b4a8274a"),dawn_guardian,Dawn Guardian,cleric,mace,ultimate,buff,purple,8,Invoke the sacred power of the Dawn Guardian, greatly increasing ally defenses.,,10,allies,,,,,,,,
+ObjectId("5d49ce74b1324640b4a8274b"),hammer_of_dawn,Hammer of Dawn,cleric,mace,ultimate,attack,purple,8,Pillars of light fall from the heavens and crash down upon your enemies.,DMG = 3 x (Player INT).,10,enemies,0,int,dmg,0,1,3,0,8
+ObjectId("5d49d046b1324640b4a8274d"),downward_strike,Downward Strike,cleric,quarterstaff,basic,attack,red,0,Strike your opponent with your quarterstaff.,DMG = Weapon ATT + Player ATT.,0,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d49d0d6b1324640b4a8274e"),flash_heal,Flash Heal,cleric,quarterstaff,special,heal,yellow,0,Heal a single ally.,HEAL = Weapon ATT + Player INT.,2,ally,2,heal,heal,0,2,1,0,0
+ObjectId("5d49d162b1324640b4a8274f"),skull_bash,Skull Bash,cleric,quarterstaff,attack,attack,blue,2,Slam your quarterstaff into the skull of an enemy.,DMG = Weapon ATT + Player ATT.,3,enemy,4,att,dmg,1,2,1,0,0
+ObjectId("5d49d246b1324640b4a82750"),searing_light,Searing Light,cleric,quarterstaff,attack,attack,blue,2,Fire a beam of intense light at your foe.,DMG = 2 x (Player INT.),4,enemy,0,int,dmg,1,1,2,0,0
+ObjectId("5d49d54fb1324640b4a82751"),mend,Mend,cleric,quarterstaff,support,heal,green,5,Heal all allies.,HEAL = Weapon ATT + Player INT.,5,allies,2,heal,heal,0,2,1,0,0
+ObjectId("5d49d5cfb1324640b4a82752"),binding_light,Binding Light,cleric,quarterstaff,support,buff,green,5,Trap your foe with rings of light.,,5,enemy,,,,,,,,
+ObjectId("5d49d693b1324640b4a82753"),lightbringer,Lightbringer,cleric,quarterstaff,ultimate,attack,purple,8,Your quarterstaff begins to glow, releasing explosions of light as you strike your enemy.,DMG = 4 x (Player INT).,9,enemy,0,int,dmg,0,1,4,0,0
+ObjectId("5d49d716b1324640b4a82754"),revive,Revive,cleric,quarterstaff,ultimate,revive,purple,8,Revive a fallen ally with full HP, but no mana.,,12,ally,30,heal,heal,0,0,1,0,0
+ObjectId("5d49e16db1324640b4a82755"),blessing,Blessing,cleric,tome,basic,buff,red,0,Call for a blessing on an ally.,,0,ally,,,,,,,,
+ObjectId("5d49e323b1324640b4a82756"),healing_circle,Healing Circle,cleric,tome,special,heal,yellow,0,Heal your entire party.,HEAL = Player INT,4,allies,0,heal,heal,0,1,1,0,0
+ObjectId("5d49e3a3b1324640b4a82757"),light_burst,Light Burst,cleric,tome,attack,attack,blue,2,Fire a burst of light at all enemies.,DMG = Weapon ATT + Player INT.,3,enemies,2,int,dmg,1,1,1,0,0
+ObjectId("5d49e562b1324640b4a82758"),constrict,Constrict,cleric,tome,attack,attack,blue,2,Bind your enemy with chains of light.,DMG = Player INT.,4,enemy,0,int,dmg,1,1,1,0,0
+ObjectId("5d49e83fb1324640b4a82759"),restore,Restore,cleric,tome,support,heal,green,5,Heal and cleanse an ally.,HEAL = Weapon ATT + Player INT,6,ally,9,heal,heal,0,1,1,0,0
+ObjectId("5d49e944b1324640b4a8275a"),vivify,Vivify,cleric,tome,support,buff,green,5,Invigorate an ally.,,5,ally,,,,,,,,
+ObjectId("5d49ea7eb1324640b4a8275b"),divine_judgement,Divine Judgement,cleric,tome,ultimate,attackheal,purple,8,Call forth radiant light to bless your allies and punish your enemies.,HEAL/DMG = Weapon ATT.,10,all,10,int,dmg,0,1,1,0,12
+ObjectId("5d49eaf4b1324640b4a8275c"),mass_revive,Mass Revive,cleric,tome,ultimate,revive,purple,8,Revive all fallen allies with full HP, but no mana.,,18,allies,30,heal,heal,0,0,1,0,0
+ObjectId("5d49efe1b1324640b4a8275d"),arrow,Arrow,archer,bow,basic,attack,red,0,Fires an arrow from your bow.,DMG = Weapon ATT + Player ATT.,0,enemy,2,att,dmg,1,1,1,0,0
+ObjectId("5d49f072b1324640b4a8275e"),doubleshot,Doubleshot,archer,bow,special,att,yellow,0,Fire two arrows in quick succession.,DMG = 2 x (Player ATT).,3,enemy,0,att,dmg,1,1,1,0,0
+ObjectId("5d49f12bb1324640b4a8275f"),mark_enemy,Mark Enemy,archer,bow,support,buff,green,2,Mark an enemy.,,3,enemy,,,,,,,,
+ObjectId("5d49f1d0b1324640b4a82760"),healing_salve,Healing Salve,archer,bow,support,heal,green,2,Apply a soothing ointment to yourself or an ally.,Heal = 2 x (Player INT).,3,ally,0,heal,heal,0,0,1,0,0
+ObjectId("5d49f2bcb1324640b4a82761"),toxic_arrow,Toxic Arrow,archer,bow,attack,attack,blue,5,Shoot a toxic arrow at an enemy.,DMG = Weapon ATT + Player ATT.,5,enemy,5,att,dmg,1,1,1,0,0
+ObjectId("5d49f362b1324640b4a82762"),steel_jaw_trap,Steel Jaw Trap,archer,bow,attack,attack,blue,5,Lure an enemy into your trap. ,DMG = Player ATT.,5,enemy,0,att,dmg,1,1,1,0,0
+ObjectId("5d49f54bb1324640b4a82763"),rapid_fire,Rapid Fire,archer,bow,ultimate,attack,purple,8,Fire a deadly stream of arrows at an enemy.,DMG = 4 x (Player ATT).,9,enemy,0,att,dmg,0,1,1,0,0
+ObjectId("5d49f682b1324640b4a82764"),arrrow_storm,Arrow Storm,archer,Bow,ultimate,attack,purple,8,Hail arrows down upon all enemies.,DMG = Weapon ATT + Player ATT.,9,enemies,10,att,dmg,0,1,1,0,0
+ObjectId("5d49f6fdb1324640b4a82765"),arrow_storm,Arrow Storm,archer,bow,ultimate,attack,purple,8,Hail arrows down upon all enemies.,DMG = Weapon ATT + Player ATT.,9,enemies,10,att,dmg,0,1,1,0,0
+ObjectId("5d49fa0cb1324640b4a82766"),arrow,Arrow,archer,crossbow,basic,attack,red,0,Fire an arrow from your crossbow.,DMG = Weapon ATT + Player ATT.,0,enemy,2,att,dmg,1,1,1,0,0
+ObjectId("5d49fad8b1324640b4a82767"),metal_arrow,Metal Arrow,archer,crossbow,special,attack,yellow,0,Fire a metal-tipped arrow.,Weapon ATT + Player ATT,3,enemy,3,att,dmg,1,1,1,0,2
+ObjectId("5d49fbdcb1324640b4a82768"),strafe,Strafe,archer,crossbow,support,buff,green,2,Evade the next enemy attack.,,4,self,,,,,,,,
+ObjectId("5d49fcd2b1324640b4a82769"),spark_bomb,Spark Bomb,archer,crossbow,support,buff,green,2,Throw a bright and noisy bomb at an enemy.,,3,enemy,,,,,,,,
+ObjectId("5d49fdcdb1324640b4a8276a"),vital_shot,Vital Shot,archer,crossbow,attack,attack,blue,5,Fire an arrow at an enemy's vital spot.,DMG = 2 x (Player ATT).,6,enemy,0,att,dmg,1,1,2,0,4
+ObjectId("5d49fee0b1324640b4a8276b"),cover_fire,Cover Fire,archer,crossbow,attack,attack,blue,5,Provide cover fire for your allies.,DMG = Weapon ATT + Player ATT.,5,all,3,att,dmg,3,1,1,0,0
+ObjectId("5d49ffb7b1324640b4a8276c"),harpoon,Harpoon,archer,crossbow,ultimate,att,purple,8,Fire a spring-loaded harpoon.,DMG = 3 x (Player ATT).,10,enemy,0,att,dmg,0,1,3,0,8
+ObjectId("5d4a0027b1324640b4a8276d"),bomb_arrow,Bomb Arrow,archer,crossbow,ultimate,attack,purple,8,Fire an explosive arrow that damages all enemies.,DMG = Weapon ATT + Player ATT.,12,enemies,15,att,dmg,0,1,1,0,0
+ObjectId("5d4a0126b1324640b4a8276e"),arrow,Arrow,archer,longbow,basic,attack,red,0,Fire an arrow from your longbow.,DMG = Player ATT + Weapon ATT,0,enemy,2,att,dmg,1,1,1,0,0
+ObjectId("5d4a01a4b1324640b4a8276f"),snipe,Snipe,archer,longbow,special,attack,yellow,0,Snipe an enemy from afar.,DMG = Weapon ATT + Player ATT.,2,enemy,3,att,dmg,2,2,1,0,0
+ObjectId("5d4a0607b1324640b4a82770"),hunters_eye,Hunter's Eye,archer,longbow,support,buff,green,2,Call out an enemy's weak point to an ally.,,2,other-allies,,,,,,,,
+ObjectId("5d4a06c4b1324640b4a82771"),natures_blessing,Nature's Blessing,archer,longbow,support,heal,green,2,Draw upon your connection with nature to heal yourself and your allies.,HEAL = Player INT.,2,allies,0,heal,heal,0,1,1,0,0
+ObjectId("5d4a0746b1324640b4a82772"),wind_arrow,Wind Arrow,archer,longbow,attack,attack,blue,5,The wind grants your arrow increased velocity.,DMG = 2 x (Player ATT).,5,enemy,0,att,dmg,1,1,2,0,2
+ObjectId("5d4a07fbb1324640b4a82773"),net_trap,Net Trap,archer,longbow,attack,attack,blue,5,Throw a net over your enemies and fire at will.,DMG = Player ATT.,6,enemies,0,att,dmg,1,1,1,0,0
+ObjectId("5d4a0894b1324640b4a82774"),vortex_arrow,Vortex Arrow,archer,longbow,ultimate,attack,purple,8,A powerful vortex of wind launches your arrow at extreme speed.,DMG = 3 x (Player ATT).,9,enemy,0,att,dmg,0,3,3,0,4
+ObjectId("5d4a0958b1324640b4a82775"),nature_surge,Nature Surge,archer,longbow,ultimate,heal,purple,8,You and your allies are infused with the raw power of nature, healing and increasing your stats for 2 turns.,HEAL = 2 x (Player INT).,12,allies,0,heal,heal,0,1,2,0,0
+ObjectId("5d4b1b64451f9b30083710d4"),freezing_blast,Freezing Blast,mage,ice,basic,attack,red,0,Fire a blast of freezing energy.,DMG = Weapon ATT + Player INT.,0,enemy,2,dmg,status,1,1,1,0,0
+ObjectId("5d4b1c32451f9b30083710d5"),ice_barrier,Ice Barrier,mage,ice,special,buff,yellow,0,Summon a protective wall of ice.,,3,self,,,,,,,,
+ObjectId("5d4b200f451f9b30083710d6"),glacial_spike,Glacial Spike,mage,ice,attack,attack,blue,2,Hurl a large spike of ice at an enemy.,DMG = 2 x (Player INT).,4,enemy,0,int,dmg,1,1,1,0,
+ObjectId("5d4b2097451f9b30083710d7"),frost_wave,Frost Wave,mage,ice,attack,attack,blue,2,Unleash a wave of subzero energy.,DMG = Player INT.,5,enemies,0,int,status,1,1,1,0,0
+ObjectId("5d4b214e451f9b30083710d8"),cryopod,Cryopod,mage,ice,support,buff,green,5,Encase yourself in ice for 2 turns.,,6,self,,,,,,,,
+ObjectId("5d4b21fa451f9b30083710d9"),ice_armor,Ice Armor,mage,ice,support,buff,green,5,Equip yourself or an ally with a suit of ice.,,6,ally,,,,,,,,
+ObjectId("5d4b2307451f9b30083710da"),subzero_blade,Subzero Blade,mage,ice,ultimate,attack,purple,8,Shape your ice into a weapon of your choosing and strike your foe.,DMG = 4 x (Player INT).,9,enemy,0,int,status,0,3,4,0,0
+ObjectId("5d4b2376451f9b30083710db"),frost_fury,Frost Fury,mage,ice,ultimate,attack,purple,8,Form giant glacial spikes high in the atmospher and hail them down upon your enemies.,DMG = 3 x (Player INT).,12,enemies,0,int,dmg,0,1,3,0,0
+ObjectId("5d4b2714451f9b30083710dc"),fireball,Fireball,mage,fire,basic,attack,red,0,Hurl an orb of fire at an enemy.,DMG = Weapon ATT + Player INT.,0,enemy,3,int,dmg,1,1,1,0,0
+ObjectId("5d4b27cb451f9b30083710dd"),ignite,Ignite,mage,fire,special,buff,yellow,0,Snap your finger and ignite your enemies.,,3,enemies,,,,,,,,
+ObjectId("5d4b2887451f9b30083710de"),purge,Purge,mage,fire,support,buff,green,2,Purge your body of all afflictions.,,3,self,,,,,,,,
+ObjectId("5d4b2919451f9b30083710df"),flame_guard,Flame Guard,mage,fire,support,buff,green,2,Increase your elemental resistances.,,4,self,,,,,,,,
+ObjectId("5d4b2ac7451f9b30083710e0"),flare,Flare,mage,fire,attack,attack,blue,5,Whip your target with searing flames.,DMG = 2 x (Player INT).,5,enemy,0,int,dmg,1,1,2,0,0
+ObjectId("5d4b2be4451f9b30083710e1"),blaze_bomb,Blaze Bomb,mage,fire,attack,attack,blue,5,Fling a small orb that violently detonates, damaging all enemies.,DMG = Weapon ATT + Player INT.,7,enemies,3,int,dmg,1,1,1,0,0
+ObjectId("5d4b2c9b451f9b30083710e2"),nova_beam,Nova Beam,mage,fire,ultimate,attack,purple,8,Fire a beam of extreme heat at an enemy.,DMG = 3 x (Player INT).,9,enemy,0,int,dmg,0,1,3,0,24
+ObjectId("5d4b2d31451f9b30083710e3"),meteor_strike,Meteor Strike,mage,fire,ultimate,attack,purple,8,Summon a fiery meteor from the heavens to crash down upon your enemies.,DMG = 4 x (Player INT).,14,enemies,0,int,dmg,0,1,4,0,0
+ObjectId("5d4b2ecc451f9b30083710e4"),spark,Spark,mage,lightning,basic,attack,red,0,Hurl a small bolt of electricity.,DMG = Weapon ATT + Player INT.,0,enemy,3,int,dmg,1,1,1,0,0
+ObjectId("5d4b2f74451f9b30083710e5"),discharge,Discharge,mage,lightning,special,attack,yellow,0,Expel pent-up charge at an enemy.,DMG = Player INT.,3,enemy,0,int,status,1,2,1,0,0
+ObjectId("5d4b3046451f9b30083710e6"),lightning_bolt,Lightning Bolt,mage,lightning,attack,attack,blue,2,Fire a bolt of lightning at an enemy.,DMG = 2 x (Player INT).,4,enemy,0,int,dmg,1,2,2,0,0
+ObjectId("5d4b30d0451f9b30083710e7"),arc_sphere,Arc Sphere,mage,lightning,attack,attack,blue,2,Create a charged sphere that damages enemies within.,DMG = Player INT.,3,enemies,0,int,dmg,1,1,1,0,0
+ObjectId("5d4b31e2451f9b30083710e8"),energize,Energize,mage,lightning,support,buff,green,5,Energize an ally with a jolt of energy.,,6,other-allies,,,,,,,,
+ObjectId("5d4b3254451f9b30083710e9"),static_barrier,Static Barrier,mage,lightning,support,buff,green,5,Create a static barrier around yourself or an ally.,,6,ally,,,,,,,,
+ObjectId("5d4b32da451f9b30083710ea"),volt_driver,Volt Driver,mage,lightning,ultimate,attack,purple,8,Fire spiraling beams of lightning at an enemy.,DMG = 5 x (Player INT).,11,enemy,0,int,dmg,0,0,5,0,0
+ObjectId("5d4b335c451f9b30083710eb"),thunder_rage,Thunder Rage,mage,lightning,ultimate,attack,purple,8,Form dark stormclouds overhead and bombard your enemies with lightning.,DMG = 3 x (Player INT).,11,enemies,0,int,dmg,0,1,3,0,0
+ObjectId("5d4b3836451f9b30083710ec"),frostbolt,Frostbolt,runemaster,runestone,basic,attack,red,0,Fire a bolt of freezing energy.,DMG = Weapon ATT + Player INT.,0,enemy,3,int,dmg,1,1,1,0,0
+ObjectId("5d4b38e1451f9b30083710ed"),arcane_burst,Arcane Burst,runemaster,runestone,special,attack,yellow,0,Fire a burst of arcane energy at all enemies.,DMG = Player INT.,3,enemies,0,int,dmg,1,1,1,0,0
+ObjectId("5d4b3979451f9b30083710ee"),ward_rune,Ward Rune,runemaster,runestone,support,buff,green,2,Cast a ward rune to protect your allies.,,3,allies,,,,,,,,
+ObjectId("5d4b4caa451f9b30083710ef"),healing_rune,Healing Rune,runemaster,runestone,support,heal,green,2,Cast a healing rune.,HEAL = Weapon ATT.,3,allies,3,heal,heal,0,1,1,0,0
+ObjectId("5d4b4d80451f9b30083710f0"),runic_circle,Runic Circle,runemaster,runestone,attack,attack,blue,5,Activate a runic circle beneath an enemy. ,DMG = Weapon ATT + Player INT.,6,enemy,2,int,dmg,1,1,1,0,0
+ObjectId("5d4b4e0c451f9b30083710f1"),flame_vortex,Flame Vortex,runemaster,runestone,attack,attack,blue,5,Combine wind with fire to create a flame vortex, damaging all enemies.,DMG = 2 x (Player INT).,7,enemies,0,int,dmg,1,1,2,0,0
+ObjectId("5d4b4f0f451f9b30083710f2"),plasma_beam,Plasma Beam,runemaster,runestone,ultimate,attack,purple,8,Combine lightning with fire to form a beam of extremely hot plasma.,DMG = 4 x (Player INT).,10,enemy,0,int,dmg,0,1,4,0,24
+ObjectId("5d4b5033451f9b30083710f3"),blizzard,Blizzard,runemaster,runestone,ultimate,attack,purple,8,Combine wind with ice to create a blizzard.,DMG = 3 x (Player INT).,10,enemies,0,int,dmg,0,1,3,0,0
+ObjectId("5d4c5993001c2957c825c39f"),crescent_strike,Crescent Strike,runemaster,runeblade,basic,attack,red,0,Strike an enemy with your runeblade.,DMG = Weapon ATT + Player ATT.,0,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d4c59f0001c2957c825c3a0"),flame_sweep,Flame Sweep,runemaster,runeblade,special,attack,yellow,0,Swing your runeblade around, releasing flames at all enemies.,DMG = Player INT.,3,enemies,0,int,dmg,1,1,1,0,0
+ObjectId("5d4c5aaa001c2957c825c3a1"),blade_block,Blade Block,runemaster,runeblade,support,buff,green,2,Shield yourself with the broad side of your runeblade.,,3,self,,,,,,,,
+ObjectId("5d4c6a0c001c2957c825c3a2"),power_rune,Power Rune,runemaster,runeblade,support,buff,green,2,Supercharge your runeblade with a power rune.,,3,self,,,,,,,,
+ObjectId("5d4c6fed001c2957c825c3a3"),frost_core,Frost Core,runemaster,runeblade,attack,attack,blue,5,Plunge your runeblade into your enemy, freezing them from within.,DMG = 2 x (Player ATT).,6,enemy,0,att,dmg,1,1,2,0,0
+ObjectId("5d4c70cc001c2957c825c3a4"),whirlwind,Whirlwind,runemaster,runeblade,attack,attack,blue,5,Spin up a whirlwind with your runeblade, damaging all enemies.,Weapon ATT + Player INT.,6,enemies,3,int,dmg,1,1,1,0,0
+ObjectId("5d4c717f001c2957c825c3a5"),thunder_blade,Thunder Blade,runemaster,runeblade,ultimate,attack,purple,8,Charge your runeblade with electricity and attack your enemy with extreme speed.,DMG = 4 x (Player ATT).,10,enemy,0,att,dmg,0,2,4,0,0
+ObjectId("5d4c720a001c2957c825c3a6"),eruption,Eruption,runemaster,runeblade,ultimate,attack,purple,8,Plunge your runeblade into the ground and channel extreme heat, causing the earth beneath your enemies to erupt.,DMG = 3 x (Player INT).,12,enemies,0,int,dmg,0,1,3,0,0
+ObjectId("5d4c72e6001c2957c825c3a7"),light_flux,Light Flux,runemaster,aether,basic,attack,red,0,Fire light energy at an enemy.,DMG = Weapon ATT + Player INT.,0,enemy,3,int,dmg,1,1,1,0,0
+ObjectId("5d4c7391001c2957c825c3a8"),seeking_shadow,Seeking Shadow,runemaster,aether,special,attack,yellow,0,Fire a dark orb that seeks out enemies.,DMG = Player INT.,3,enemies,0,int,dmg,0,1,1,0,0
+ObjectId("5d4c7455001c2957c825c3a9"),spectral_shift,Spectral Shift,runemaster,aether,support,buff,green,2,Partially phase out of this dimension for 1 turn.,,5,self,,,,,,,,
+ObjectId("5d4c7605001c2957c825c3aa"),light_prism,Light Prism,runemaster,aether,support,buff,green,2,Create a prism of light that distorts light around enemies, lowering their attack and defense.,,3,enemies,,,,,,,,
+ObjectId("5d4c775e001c2957c825c3ab"),void_fissure,Void Fissure,runemaster,aether,attack,attack,blue,5,Channel dark energy from the Void and fire it at an enemy.,DMG = 2 x (Player INT).,5,enemy,0,int,dmg,1,1,1,0,0
+ObjectId("5d4c7845001c2957c825c3ac"),light_shatter,Light Shatter,runemaster,aether,attack,attack,blue,5,Hail shards of light upon all enemies.,DMG = Weapon ATT + Player INT.,6,enemies,3,int,dmg,1,1,1,0,0
+ObjectId("5d4c78f0001c2957c825c3ad"),starfire,Starfire,runemaster,aether,ultimate,attack,purple,8,Light falls from the heavens and bombards a single enemy.,DMG = 4 x (Player INT).,9,enemy,0,int,dmg,0,1,4,0,6
+ObjectId("5d4c7a16001c2957c825c3ae"),abyss_break,Abyss Break,runemaster,aether,ultimate,attack,purple,8,Open a rift to the Void Abyss beneath your enemies, overwhelming them with dark energy.,DMG = 3 x (Player INT).,12,enemies,0,int,dmg,0,1,3,0,12
+ObjectId("5d4c9432001c2957c825c3af"),stab,Stab,rogue,dagger,basic,attack,red,0,Stab an enemy with your dagger.,DMG = Weapon ATT + Player ATT.,0,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d4c9548001c2957c825c3b0"),venom_blade,Venom Blade,rogue,dagger,special,attack,yellow,0,Stab an enemy with a dagger coated in venom.,DMG = Weapon ATT + Player ATT,3,enemy,3,att,dmg,1,1,1,0,0
+ObjectId("5d4c9695001c2957c825c3b1"),alchemic_potion,Alchemic Potion,rogue,dagger,support,buff,green,2,Speed up your metabolism with a homebrewed alchemic potion.,HEAL = 6 HP.,4,self,0,,,0,0,0,6,0
+ObjectId("5d4c98d7001c2957c825c3b2"),acid_vial,Acid Vial,rogue,dagger,support,buff,green,2,Throw a vial of acid that can eat through metal.,,4,enemy,,,,,,,,
+ObjectId("5d4c99db001c2957c825c3b3"),fatal_strike,Fatal Strike,rogue,dagger,attack,attack,blue,5,Deal a stealthy blow to your enemy.,DMG = Weapon ATT + Player ATT.,6,enemy,4,att,dmg,1,1,1,0,0
+ObjectId("5d4c9a62001c2957c825c3b4"),deadly_toxin,Deadly Toxin,rogue,dagger,attack,attack,blue,5,Disperse a specially formulated toxin.,,5,enemies,0,att,dmg,1,0,0,0,0
+ObjectId("5d4ca13a001c2957c825c3b5"),assassinate,Assassinate,rogue,dagger,ultimate,attack,purple,8,Become hidden for one turn and strike your enemy the next.,DMG = 5 x (Player ATT).,12,enemy,0,att,dmg',0,0,5,0,0
+ObjectId("5d4ca1e5001c2957c825c3b6"),chaos_blade,Chaos Blade,rogue,dagger,ultimate,attack,purple,8,Shroud your enemies with smoke then ravage them with your dagger.,DMG = 3 x (Player ATT).,12,enemies,0,att,dmg,0,1,3,0,0
+ObjectId("5d4ca585001c2957c825c3b7"),slice,Slice,rogue,sai,basic,attack,red,0,Slice your opponent with your dual sai.,DMG = Weapon ATT + Player ATT.,0,enemy,2,att,dmg,1,1,1,0,0
+ObjectId("5d4ca626001c2957c825c3b8"),blade_storm,Blade Storm,rogue,sai,special,att,yellow,0,Attack all enemies extremely fast.,DMG = Player ATT.,3,enemies,0,att,dmg,1,2,1,0,0
+ObjectId("5d4ca6e6001c2957c825c3b9"),dual_defense,Dual Defense,rogue,sai,support,buff,green,2,Adopt a defensive stance with your dual sai.,,3,self,,,,,,,,
+ObjectId("5d4ca7bf001c2957c825c3ba"),vanish,Vanish,rogue,sai,support,buff,green,2,Sink into the shadows.,,3,self,,,,,,,,
+ObjectId("5d4ca8c4001c2957c825c3bb"),eviscerate,Eviscerate,rogue,sai,attack,attack,blue,5,Inflict a deep wound on your enemy.,DMG = 2 x (Player ATT),5,enemy,0,att,dmg,1,1,2,0,0
+ObjectId("5d4ca9ae001c2957c825c3bc"),shadow_blitz,Shadow Blitz,rogue,sai,attack,attack,blue,5,Use your shadow energy to ravage your enemies with extreme speed.,DMG = Weapon ATT + Player ATT.,6,enemies,3,att,dmg,1,1,1,0,0
+ObjectId("5d4caa96001c2957c825c3bd"),phantom_strike,Phantom Strike,rogue,sai,ultimate,attack,purple,8,Emerge from the shadows and strike your enemy.,DMG = Weapon ATT + Player ATT>,9,enemy,12,att,dmg,0,3,1,0,0
+ObjectId("5d4cabe8001c2957c825c3be"),shadows_unleashed,Shadows Unleashed,rogue,sai,ultimate,attack,purple,8,Unleash the full power of your shadow energy, siphoning life from your enemies while they are consumed by darkness.,DMG = 3 x (Player ATT).,14,enemies,0,att,dmg,0,1,3,0,24
+ObjectId("5d4daa58cb614908057e82ce"),shuriken_throw,Shuriken Throw,rogue,shuriken,basic,attack,red,0,Throw shuriken at an enemy.,DMG = Weapon ATT + Player ATT.,0,enemy,2,att,dmg,2,2,1,0,0
+ObjectId("5d4dacfdcb614908057e82cf"),shadow_star,Shadow Star,rogue,shuriken,special,attack,yellow,0,Throw a shuriken and create shadow clones of it, attacking all enemies.,DMG = Player ATT,3,enemies,0,att,dmg,2,2,1,0,0
+ObjectId("5d4dada4cb614908057e82d0"),substitution,Substitution,rogue,shuriken,support,buff,green,2,Switch places with a shadow clone and evade the next enemy attack.,,3,self,,,,,,,,
+ObjectId("5d4dc1b8cb614908057e82d1"),duplicity,Duplicity,rogue,shuriken,support,buff,green,2,Create multiple shadow clones of yourself, confusing your enemies.,,4,enemies,,,,,,,,
+ObjectId("5d4dc278cb614908057e82d2"),hidden_strike,Hidden Strike,rogue,shuriken,attack,attack,blue,5,Distract an enemy with a shadow clone and attack from behind.,DMG = 2 x (Player ATT),5,enemy,0,att,dmg,1,2,2,0,0
+ObjectId("5d4dc82ccb614908057e82d4"),convergence,Convergence,rogue,shuriken,attack,attack,blue,5,Create a horde of shadow clones that slam into your enemies. ,DMG = Weapon ATT.,7,enemies,12,int,dmg,1,1,1,0,12
+ObjectId("5d4dcbd2cb614908057e82d5"),windmill_shuriken,Windmill Shuriken,rogue,shuriken,ultimate,attack,purple,8,Hurl a giant windmill shuriken at an enemy.,DMG = 3 x (Player ATT).,8,enemy,0,att,dmg,0,3,3,0,0
+ObjectId("5d4dcc1dcb614908057e82d6"),shadow_storm,Shadow Storm,rogue,shuriken,ultimate,attack,purple,8,You and your shadow clones leap into the air and rain shuriken down upon all enemies.,DMG = 4 x (Player ATT).,11,enemies,0,att,dmg,0,1,4,0,0
